@@ -1,0 +1,77 @@
+﻿@model XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Models.CatalogSettingModel
+@{
+    NopHtml.SetActiveMenuItemSystemName("XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Configure");
+}
+
+<div class="cards-group">
+    <div class="card card-default">
+        <div class="card-body">
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="EnableVendor_OverrideForStore" asp-input="EnableVendor" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="EnableVendor" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="EnableVendor" />
+                    <span asp-validation-for="EnableVendor"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlvendorajaxfaceting">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="VendorAjaxFaceting_OverrideForStore" asp-input="VendorAjaxFaceting" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="VendorAjaxFaceting" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="VendorAjaxFaceting" />
+                    <span asp-validation-for="VendorAjaxFaceting"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlvendorinfinitescrolling">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="VendorInfiniteScrolling_OverrideForStore" asp-input="VendorInfiniteScrolling" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="VendorInfiniteScrolling" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="VendorInfiniteScrolling" />
+                    <span asp-validation-for="VendorInfiniteScrolling"></span>
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="VendorInfiniteScrollingTillPage_OverrideForStore" asp-input="VendorInfiniteScrollingTillPage" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="VendorInfiniteScrollingTillPage" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="VendorInfiniteScrollingTillPage" />
+                    <span asp-validation-for="VendorInfiniteScrollingTillPage"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlvendorshownoofproductsfound">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="VendorShowNoOfProductsFound_OverrideForStore" asp-input="VendorShowNoOfProductsFound" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="VendorShowNoOfProductsFound" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="VendorShowNoOfProductsFound" />
+                    <span asp-validation-for="VendorShowNoOfProductsFound"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlvendorTagsearchWithin">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="VendorEnableSearchWithin_OverrideForStore" asp-input="VendorEnableSearchWithin" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="VendorEnableSearchWithin" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="VendorEnableSearchWithin" />
+                    <span asp-validation-for="VendorEnableSearchWithin"></span>
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="VendorSearchWithinSelector_OverrideForStore" asp-input="VendorSearchWithinSelector" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="VendorSearchWithinSelector" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="VendorSearchWithinSelector" />
+                    <span asp-validation-for="VendorSearchWithinSelector"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

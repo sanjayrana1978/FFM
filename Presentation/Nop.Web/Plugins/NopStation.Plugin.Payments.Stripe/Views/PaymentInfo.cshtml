@@ -1,0 +1,54 @@
+﻿@model PaymentInfoModel
+
+<div class="card-info">
+    <div class="credit-card-info">
+        <div class="credit-card-name">
+            <label asp-for="CreditCardTypes">@T("NopStation.Stripe.CreditCardType"):</label>
+        </div>
+        <div class="credit-card-type">
+            <select asp-for="CreditCardType" asp-items="Model.CreditCardTypes" class="dropdownlists"></select>
+        </div>
+    </div>
+    <div class="card-holder-info">
+        <div class="card-holder-name">
+            <label asp-for="CardholderName">@T("NopStation.Stripe.CardholderName"):</label>
+        </div>
+        <div class="card-holder-input">
+            <input type="text" asp-for="CardholderName" autocomplete="off" placeholder="Enter holder name..." />
+            <span asp-validation-for="CardholderName"></span>
+        </div>
+    </div>
+    <div class="card-details">
+        <div class="card-number-info">
+            <div class="card-number">
+                <label asp-for="CardNumber">@T("NopStation.Stripe.CardNumber"):</label>
+            </div>
+            <div class="card-number-input">
+                <input type="text" asp-for="CardNumber" autocomplete="off" maxlength="22" placeholder="Enter card number..." />
+                <span asp-validation-for="CardNumber"></span>
+            </div>
+        </div>
+        <div class="card-expire-info">
+            <div class="card-expire-name">
+                <label asp-for="ExpireMonth">@T("NopStation.Stripe.ExpirationDate"):</label>
+            </div>
+            <div class="card-expire-date">
+                <select asp-for="ExpireMonth" asp-items="Model.ExpireMonths"></select>
+                /
+                <select asp-for="ExpireYear" asp-items="Model.ExpireYears"></select>
+            </div>
+        </div>
+        <div class="card-code-info">
+            <div class="card-code">
+                <label asp-for="CardCode">@T("NopStation.Stripe.CardCode"):</label>
+            </div>
+            <div class="card-code-input">
+                <input type="text" asp-for="CardCode" autocomplete="off" maxlength="4" placeholder="xxxx" />
+                <span asp-validation-for="CardCode"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card-body">
+</div>

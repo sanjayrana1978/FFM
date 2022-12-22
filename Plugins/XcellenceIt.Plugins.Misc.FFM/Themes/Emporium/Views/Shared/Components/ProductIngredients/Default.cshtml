@@ -1,0 +1,10 @@
+﻿@model XcellenceIt.Plugins.Misc.FFM.Models.ProducstAdditinalInfo.ProductAdditionalInfoModel
+
+ @if (!string.IsNullOrEmpty(Model.IngredientsInfomation))
+{
+    <div class="short-description">
+        <h2>@T("Plugins.Misc.FFM.Fields.IngredientsInfomation")</h2>  @Html.Raw(@Model.IngredientsInfomation)
+    </div>
+}
+
+

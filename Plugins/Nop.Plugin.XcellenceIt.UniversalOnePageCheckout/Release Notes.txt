@@ -1,0 +1,5 @@
+﻿Release Date: 
+
+Universal OnePage Checkout Plugin Version: 4.0
+Support added for nopCommerce 4.30
+

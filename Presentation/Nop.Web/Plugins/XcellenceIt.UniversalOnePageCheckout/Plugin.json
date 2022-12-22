@@ -1,0 +1,11 @@
+﻿{
+  "Group": "XcellenceIT",
+  "FriendlyName": "Universal OnePage Checkout",
+  "SystemName": "XcellenceIt.Plugin.Misc.UniversalOnePageCheckout",
+  "Version": "6.0.1.2",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "Xcellence-IT",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.dll",
+  "Description": "This plugin used for One Page Checkout."
+}

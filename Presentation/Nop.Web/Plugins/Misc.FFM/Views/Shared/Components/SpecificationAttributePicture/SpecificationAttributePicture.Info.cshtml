@@ -1,0 +1,59 @@
+﻿@model SpecificationAttributePictureModel
+
+@if (Model.SpecificationAttributeId > 0)
+{
+    <div class="card-body">
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="PictureId" />
+            </div>
+            <div class="col-md-9">
+                <nop-editor asp-for="PictureId" />
+                <span asp-validation-for="PictureId"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-9 offset-md-3">
+                <button type="button" id="BtnSave" name="save" class="btn btn-primary">@T("Admin.Common.Save")</button>
+            </div>
+        </div>
+    </div>
+
+    <script asp-Location="Footer">
+        $(document).ready(function() {
+            $('#BtnSave').click(function(){
+                   $("#ajaxBusy").show();
+                var AttributeId = $("#@Html.IdFor(model => model.Id)").val();
+                var PictureId = $("#@Html.IdFor(model => model.PictureId)").val();
+                var postData = {
+                    specificationAttributeId : AttributeId,
+                    pictureId: PictureId
+                };
+                addAntiForgeryToken(postData);
+                $.ajax({
+                    url: '@Url.Action("SpecificationAttributePictureTab", "FFM")',
+                    type: "POST",
+                    data: postData,
+                    success: function (data, textStatus, jqXHR) {
+                       if (data.result) {
+                            $("#ajaxBusy").hide();
+                              $("#addProductPictureAlert").click();
+                        }
+                        else{
+                            $("#ajaxBusy").hide();
+                             $("#ProductPictureAlertError").click();
+                        }
+                    },
+                });
+            });
+        });
+    </script>
+}
+else
+{
+<div class="card-body">
+    @T("Plugins.Misc.FFM.Admin.Catalog.Attributes.SpecificationAttributes.SpecificationAttribute.Picture.SaveBeforeEdit")
+</div>
+}
+<nop-alert asp-alert-id="addProductPictureAlert" asp-alert-message="@T("Plugins.Misc.FFM.Admin.Catalog.Attributes.SpecificationAttributes.SpecificationAttribute.Picture.Tab.Updated")" />
+<nop-alert asp-alert-id="ProductPictureAlertError" asp-alert-message="@T("Plugins.Misc.FFM.Admin.Catalog.Attributes.SpecificationAttributes.Picture.Updated")"/>

@@ -1,0 +1,592 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Copyright>Copyright ©Xcellence-It</Copyright>
+    <Company>Xcellence-It</Company>
+    <Authors>Xcellence-It</Authors>
+    <PackageLicenseUrl>PACKAGE_LICENSE_URL</PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType></RepositoryType>
+    <OutputPath>..\..\Presentation\Nop.Web\Plugins\XcellenceIt.UniversalOnePageCheckout</OutputPath>
+    <OutDir>$(OutputPath)</OutDir>
+    <!--Set this parameter to true to get the dlls copied from the NuGet cache to the output of your    project. You need to set this parameter to true if your plugin has a nuget package to ensure that   the dlls copied from the NuGet cache to the output of your project-->
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Content\Css\color.css" />
+    <None Remove="Content\Css\fontawesome-all.min.css" />
+    <None Remove="Content\Css\jquery.mCustomScrollbar.css" />
+    <None Remove="Content\Css\jquery.mCustomScrollbar.min.css" />
+    <None Remove="Content\Css\universal-opc-style.css" />
+    <None Remove="Content\Css\Universal.OpcCheckout.Common.css" />
+    <None Remove="Content\Images\ajax_loader_large.gif" />
+    <None Remove="Content\Images\ajax_loader_large_opc.gif" />
+    <None Remove="Content\Images\ajax_loader_large_opc.png" />
+    <None Remove="Content\Images\ajax_loader_small.gif" />
+    <None Remove="Content\Images\close.png" />
+    <None Remove="Content\Images\collapse-arrow.png" />
+    <None Remove="Content\Images\edit.png" />
+    <None Remove="Content\Images\gift-box.png" />
+    <None Remove="Content\Images\opc-select-arrow.png" />
+    <None Remove="Content\Scripts\bootstrap.min.js" />
+    <None Remove="Content\Scripts\jquery.blockUI.js" />
+    <None Remove="Content\Scripts\jquery.mCustomScrollbar.concat.min.js" />
+    <None Remove="Content\Scripts\universal.opconepagecheckout.js" />
+    <None Remove="Content\webfonts\fa-brands-400.eot" />
+    <None Remove="Content\webfonts\fa-brands-400.svg" />
+    <None Remove="Content\webfonts\fa-brands-400.ttf" />
+    <None Remove="Content\webfonts\fa-brands-400.woff" />
+    <None Remove="Content\webfonts\fa-brands-400.woff2" />
+    <None Remove="Content\webfonts\fa-regular-400.eot" />
+    <None Remove="Content\webfonts\fa-regular-400.svg" />
+    <None Remove="Content\webfonts\fa-regular-400.ttf" />
+    <None Remove="Content\webfonts\fa-regular-400.woff" />
+    <None Remove="Content\webfonts\fa-regular-400.woff2" />
+    <None Remove="Content\webfonts\fa-solid-900.eot" />
+    <None Remove="Content\webfonts\fa-solid-900.svg" />
+    <None Remove="Content\webfonts\fa-solid-900.ttf" />
+    <None Remove="Content\webfonts\fa-solid-900.woff" />
+    <None Remove="Content\webfonts\fa-solid-900.woff2" />
+    <None Remove="Localization\ResourceString\ResourceString.xml" />
+    <None Remove="logo.jpg" />
+    <None Remove="Plugin.json" />
+    <None Remove="Themes\DefaultClean\Content\css\Universal.OpcCheckout.css" />
+    <None Remove="Themes\DefaultClean\Views\OPCCheckout\OnePageCheckout.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\OPCCheckout\OpcBillingAddress.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\OPCCheckout\OpcConfirmOrder.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\OPCCheckout\OpcPaymentInfo.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\OPCCheckout\OpcPaymentMethods.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\OPCCheckout\OpcShippingAddress.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\OPCCheckout\OpcShippingMethods.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\OPCShoppingCart\Cart.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\OPCShoppingCart\EmailWishlist.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\OPCShoppingCart\Wishlist.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\OPCShoppingCart\_EstimateShippingResult.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\OPCShoppingCart\_GiftCardBox.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\Components\OPCCrossSellProducts\Default.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\Components\OPCOrderTotals\Default.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\Components\OPCSelectedCheckoutAttributes\Default.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\OPCUpdateCart.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\UpdateCart.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_AddressAttributes.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_CheckoutAttributes.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_CreateOrUpdateAddress.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_DiscountBox.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_EstimateShippingResult.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_GiftCardBox.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_OPCAddressAttributes.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_OPCCheckoutAttributes.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_OPCCreateOrUpdateAddress.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_OPCDiscountBox.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_OPCEstimateShippingResult.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\Shared\_OPCGiftCardBox.cshtml" />
+    <None Remove="Themes\DefaultClean\Views\_ViewImports.cshtml" />
+    <None Remove="Themes\Emporium\Content\css\Universal.OpcCheckout.css" />
+    <None Remove="Themes\Emporium\Content\img\edit-address.png" />
+    <None Remove="Themes\Emporium\Views\OPCCheckout\OnePageCheckout.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCCheckout\OpcBillingAddress.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCCheckout\OpcConfirmOrder.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCCheckout\OpcPaymentInfo.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCCheckout\OpcPaymentMethods.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCCheckout\OpcShippingAddress.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCCheckout\OpcShippingMethods.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCShoppingCart\AddressEditPopup.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCShoppingCart\Cart.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCShoppingCart\EmailWishlist.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCShoppingCart\Wishlist.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCShoppingCart\_EstimateShippingResult.cshtml" />
+    <None Remove="Themes\Emporium\Views\OPCShoppingCart\_GiftCardBox.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\Components\OPCCrossSellProducts\Default.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\Components\OPCOrderTotals\Default.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\Components\OPCSelectedCheckoutAttributes\Default.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\OPCUpdateCart.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\UpdateCart.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_AddressAttributes.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_CheckoutAttributes.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_CreateOrUpdateAddress.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_DiscountBox.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_EstimateShippingResult.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_GiftCardBox.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_OPCAddressAttributes.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_OPCCheckoutAttributes.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_OPCCreateOrUpdateAddress.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_OPCDiscountBox.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_OPCEstimateShippingResult.cshtml" />
+    <None Remove="Themes\Emporium\Views\Shared\_OPCGiftCardBox.cshtml" />
+    <None Remove="Views\OPCCheckout\OnePageCheckout.cshtml" />
+    <None Remove="Views\OPCCheckout\OpcBillingAddress.cshtml" />
+    <None Remove="Views\OPCCheckout\OpcConfirmOrder.cshtml" />
+    <None Remove="Views\OPCCheckout\OpcPaymentInfo.cshtml" />
+    <None Remove="Views\OPCCheckout\OpcPaymentMethods.cshtml" />
+    <None Remove="Views\OPCCheckout\OpcShippingAddress.cshtml" />
+    <None Remove="Views\OPCCheckout\OpcShippingMethods.cshtml" />
+    <None Remove="Views\OPCShoppingCart\AddressEditPopup.cshtml" />
+    <None Remove="Views\OPCShoppingCart\Cart.cshtml" />
+    <None Remove="Views\OPCShoppingCart\EmailWishlist.cshtml" />
+    <None Remove="Views\OPCShoppingCart\UpdateShippingAddress.cshtml" />
+    <None Remove="Views\OPCShoppingCart\Wishlist.cshtml" />
+    <None Remove="Views\OPCShoppingCart\_EstimateShippingResult.cshtml" />
+    <None Remove="Views\OPCShoppingCart\_GiftCardBox.cshtml" />
+    <None Remove="Views\Shared\Components\OPCCrossSellProducts\Default.cshtml" />
+    <None Remove="Views\Shared\Components\OPCOrderTotals\Default.cshtml" />
+    <None Remove="Views\Shared\Components\OPCSelectedCheckoutAttributes\Default.cshtml" />
+    <None Remove="Views\Shared\OPCUpdateCart.cshtml" />
+    <None Remove="Views\Shared\UpdateCart.cshtml" />
+    <None Remove="Views\Shared\_AddressAttributes.cshtml" />
+    <None Remove="Views\Shared\_CheckoutAttributes.cshtml" />
+    <None Remove="Views\Shared\_CreateOrUpdateAddress.cshtml" />
+    <None Remove="Views\Shared\_DiscountBox.cshtml" />
+    <None Remove="Views\Shared\_EstimateShippingResult.cshtml" />
+    <None Remove="Views\Shared\_GiftCardBox.cshtml" />
+    <None Remove="Views\Shared\_OPCAddressAttributes.cshtml" />
+    <None Remove="Views\Shared\_OPCCheckoutAttributes.cshtml" />
+    <None Remove="Views\Shared\_OPCCreateOrUpdateAddress.cshtml" />
+    <None Remove="Views\Shared\_OPCDiscountBox.cshtml" />
+    <None Remove="Views\Shared\_OPCEstimateShippingResult.cshtml" />
+    <None Remove="Views\Shared\_OPCGiftCardBox.cshtml" />
+    <None Remove="Views\UniversalOnePageCheckout\Configure.cshtml" />
+    <None Remove="Views\_ViewImports.cshtml" />
+    <None Remove="XcellenceIt.Core.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ClearPluginAssemblies Include="$(MSBuildProjectDirectory)\..\..\Build\ClearPluginAssemblies.proj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Presentation\Nop.Web.Framework\Nop.Web.Framework.csproj" />
+    <ProjectReference Include="..\..\Presentation\Nop.Web\Nop.Web.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.AssemblyAttributes.BuildDateAttribute">
+      <_Parameter1>$([System.DateTime]::UtcNow.ToString("o"))</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Css\color.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Css\fontawesome-all.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Css\jquery.mCustomScrollbar.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Css\jquery.mCustomScrollbar.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Css\universal-opc-style.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Css\Universal.OpcCheckout.Common.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\ajax_loader_large.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\ajax_loader_large_opc.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\ajax_loader_large_opc.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\ajax_loader_small.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\collapse-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\edit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\gift-box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\opc-select-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Scripts\bootstrap.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Scripts\jquery.blockUI.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Scripts\jquery.mCustomScrollbar.concat.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Scripts\universal.opconepagecheckout.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-brands-400.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-brands-400.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-brands-400.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-brands-400.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-brands-400.woff2">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-regular-400.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-regular-400.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-regular-400.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-regular-400.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-regular-400.woff2">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-solid-900.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-solid-900.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-solid-900.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-solid-900.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\webfonts\fa-solid-900.woff2">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Localization\ResourceString\ResourceString.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="logo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plugin.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Content\css\Universal.OpcCheckout.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCCheckout\OnePageCheckout.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCCheckout\OpcBillingAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCCheckout\OpcConfirmOrder.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCCheckout\OpcPaymentInfo.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCCheckout\OpcPaymentMethods.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCCheckout\OpcShippingAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCCheckout\OpcShippingMethods.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCShoppingCart\Cart.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCShoppingCart\EmailWishlist.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCShoppingCart\Wishlist.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCShoppingCart\_EstimateShippingResult.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\OPCShoppingCart\_GiftCardBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\Components\OPCCrossSellProducts\Default.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\Components\OPCOrderTotals\Default.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\Components\OPCSelectedCheckoutAttributes\Default.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\OPCUpdateCart.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\UpdateCart.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_AddressAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_CheckoutAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_CreateOrUpdateAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_DiscountBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_EstimateShippingResult.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_GiftCardBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_OPCAddressAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_OPCCheckoutAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_OPCCreateOrUpdateAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_OPCDiscountBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_OPCEstimateShippingResult.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\Shared\_OPCGiftCardBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\DefaultClean\Views\_ViewImports.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Content\css\Universal.OpcCheckout.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Content\img\edit-address.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Themes\Emporium\Content\img\edit-address.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Themes\Emporium\Views\OPCCheckout\OnePageCheckout.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCCheckout\OpcBillingAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCCheckout\OpcConfirmOrder.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCCheckout\OpcPaymentInfo.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCCheckout\OpcPaymentMethods.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCCheckout\OpcShippingAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCCheckout\OpcShippingMethods.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCShoppingCart\AddressEditPopup.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCShoppingCart\Cart.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCShoppingCart\EmailWishlist.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCShoppingCart\Wishlist.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCShoppingCart\_EstimateShippingResult.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\OPCShoppingCart\_GiftCardBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\Components\OPCCrossSellProducts\Default.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\Components\OPCOrderTotals\Default.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\Components\OPCSelectedCheckoutAttributes\Default.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\OPCUpdateCart.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\UpdateCart.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_AddressAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_CheckoutAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_CreateOrUpdateAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_DiscountBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_EstimateShippingResult.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_GiftCardBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_OPCAddressAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_OPCCheckoutAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_OPCCreateOrUpdateAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_OPCDiscountBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_OPCEstimateShippingResult.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Themes\Emporium\Views\Shared\_OPCGiftCardBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCCheckout\OnePageCheckout.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCCheckout\OpcBillingAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCCheckout\OpcConfirmOrder.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCCheckout\OpcPaymentInfo.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCCheckout\OpcPaymentMethods.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCCheckout\OpcShippingAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCCheckout\OpcShippingMethods.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCShoppingCart\AddressEditPopup.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCShoppingCart\Cart.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCShoppingCart\EmailWishlist.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCShoppingCart\UpdateShippingAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCShoppingCart\Wishlist.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCShoppingCart\_EstimateShippingResult.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OPCShoppingCart\_GiftCardBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\Components\OPCCrossSellProducts\Default.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\Components\OPCOrderTotals\Default.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\Components\OPCSelectedCheckoutAttributes\Default.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\OPCUpdateCart.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\UpdateCart.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_AddressAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_CheckoutAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_CreateOrUpdateAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_DiscountBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_EstimateShippingResult.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_GiftCardBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_OPCAddressAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_OPCCheckoutAttributes.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_OPCCreateOrUpdateAddress.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_OPCDiscountBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_OPCEstimateShippingResult.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_OPCGiftCardBox.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\UniversalOnePageCheckout\Configure.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\_ViewImports.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="XcellenceIt.Core.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="XcellenceIt.Core">
+      <HintPath>XcellenceIt.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Themes\Emporium\Views\_ViewImports.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- This target execute after "Build" target -->
+  <Target Name="NopTarget" AfterTargets="Build">
+    <!-- Delete unnecessary libraries from plugins path -->
+    <MSBuild Projects="@(ClearPluginAssemblies)" Properties="PluginPath=$(MSBuildProjectDirectory)\$(OutDir)" Targets="NopClear" />
+  </Target>
+</Project>

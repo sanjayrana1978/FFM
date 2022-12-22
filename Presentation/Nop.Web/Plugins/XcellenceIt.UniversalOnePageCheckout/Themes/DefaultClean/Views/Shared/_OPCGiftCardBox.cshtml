@@ -1,0 +1,35 @@
+﻿@model ShoppingCartModel.GiftCardBoxModel
+@using Nop.Web.Models.ShoppingCart;
+@if (Model.Display)
+{
+    <div class="giftcard-box">
+        <div class="hint">@T("ShoppingCart.GiftCardCouponCode.Tooltip")</div>
+        <div class="coupon-code">
+            <input name="giftcardcouponcode" id="giftcardcouponcode" type="text" class="gift-card-coupon-code" aria-label="@T("ShoppingCart.GiftCardCouponCode.Label")" />
+            <input type="button" name="applygiftcardcouponcode" id="applygiftcardcouponcode"
+                   value="@T("opc.shoppingcart.giftcards.button")" class="button-2 apply-gift-card-coupon-code-button" />
+        </div>
+        @if (!string.IsNullOrEmpty(Model.Message))
+        {
+            <div class="@(Model.IsApplied ? "message-success" : "message-failure")">
+                @Model.Message
+            </div>
+        }
+        <script asp-location="Footer">
+            $(document).ready(function () {
+                $(document).on('click', '#giftcardcouponcode', function(event) {
+                    if (event.keyCode == 13) {
+                        $('#applygiftcardcouponcode').trigger("click");
+                        return false;
+                    }
+                });
+
+                    $(document).on('click', '#applygiftcardcouponcode', function(event) {
+                    discountgiftcardcouponcode('/opccheckout/applygiftcard')
+                    return false;
+                });
+
+            });
+        </script>
+    </div>
+}

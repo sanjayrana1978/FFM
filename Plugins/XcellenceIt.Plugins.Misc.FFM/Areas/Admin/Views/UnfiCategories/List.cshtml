@@ -1,0 +1,172 @@
+﻿@model UnfiCategoriesSearchModel
+@{
+    Layout = "_AdminLayout";
+    NopHtml.SetActiveMenuItemSystemName("Plugins.Misc.FFM.UnfiCategories");
+}
+<div class="content-header clearfix">
+    <h1 class="float-left">
+        @T("Plugins.Misc.FFM.UnfiCategories")
+    </h1>
+    <div class="float-right">
+        <button type="submit" id="delete-selected" class="btn btn-danger">
+            <i class="far fa-trash-alt"></i>
+            @T("Admin.Common.Delete.Selected")
+        </button>
+        <nop-action-confirmation asp-button-id="delete-selected" />
+    </div>
+</div>
+<div class="container-fluid">
+    <section class="content">
+        <div class="form-horizontal">
+            <div class="cards-group">
+                <div class="card card-default">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                            </div>
+                            @await Html.PartialAsync("Table", new DataTablesModel
+                            {
+                                Name = "UnfiCategories-grid",
+                                UrlRead = new DataUrl("List", "UnfiCategories", null),
+                                UrlDelete = new DataUrl("UnfiCategoryDelete", "UnfiCategories", null),
+                                Length = Model.Length,
+                                LengthMenu = Model.AvailablePageSizes,
+                                ColumnCollection = new List<ColumnProperty>
+                                {
+                                    new ColumnProperty(nameof(UnfiCategoriesModel.Id))
+                                    {
+                                        IsMasterCheckBox = true,
+                                        Render = new RenderCheckBox("checkbox_manufacturers"),
+                                        ClassName =  NopColumnClassDefaults.CenterAll,
+                                        Width = "50"
+                                    },
+                                    new ColumnProperty(nameof(UnfiCategoriesModel.CategoryName))
+                                    {
+                                        Title = T("Plugins.Misc.FFM.UnfiCategories.Fields.Categories").Text,
+                                        Width = "490"
+                                    },
+                                    new ColumnProperty(nameof(UnfiCategoriesModel.UnfiCategoryName))
+                                    {
+                                        Title = T("Plugins.Misc.FFM.UnfiCategories").Text,
+                                        Width = "490"
+                                    },
+                                    new ColumnProperty(nameof(UnfiCategoriesModel.Id))
+                                    {
+                                        Title = T("Admin.Common.Delete").Text,
+                                        Width = "100",
+                                        ClassName =  NopColumnClassDefaults.Button,
+                                        Render = new RenderButtonRemove(T("Admin.Common.Delete").Text)
+                                    }
+                                }
+                            })
+                        </div>
+                        <div class="card card-default no-margin">
+                            <div class="card-header">
+                                @T("Admin.Common.AddNewRecord")
+                            </div>
+                            <form asp-controller="UnfiCategories" asp-action="CreateUnfiCategoryMapping" method="post">
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <div class="col-md-3">
+                                            <nop-label asp-for="@Model.unfiCategories.Categories" />
+                                        </div>
+                                        <div class="col-md-9">
+                                            <nop-select asp-for="@Model.unfiCategories.Categories" asp-items="@Model.unfiCategories.AllCategories" />
+                                            <script>
+                                                $(document).ready(function () {
+                                                    var rolesIdsInput =
+                                                        $('#@Html.IdFor(model => model.unfiCategories.UnfiCategory)')
+                                                            .data("kendoMultiSelect");
+                                                    rolesIdsInput.setOptions({
+                                                        autoClose: false,
+                                                        filter: "contains"
+                                                    });
+                                                @if (Model.unfiCategories.AllCategories.Count == 0)
+                                                {
+                                                    <text>
+                                                            rolesIdsInput.setOptions({
+                                                                enable: false,
+                                                                placeholder: 'No Category Available'
+                                                            });
+                                                        rolesIdsInput._placeholder();
+                                                        rolesIdsInput._enable();
+                                                    </text>
+                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        });
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-3">
+                                            <nop-label asp-for="@Model.unfiCategories.UnfiCategory" />
+                                        </div>
+                                        <div class="col-md-9">
+                                            <nop-select asp-for="@Model.unfiCategories.UnfiCategory" asp-items="@Model.unfiCategories.AllCategories" asp-multiple="true" />
+                                            <script>
+                                                $(document).ready(function () {
+                                                    var rolesIdsInput =
+                                                        $('#@Html.IdFor(model => model.unfiCategories.UnfiCategory)')
+                                                            .data("kendoMultiSelect");
+                                                    rolesIdsInput.setOptions({
+                                                        autoClose: false,
+                                                        filter: "contains"
+                                                    });
+                                                @if (Model.unfiCategories.AllCategories.Count == 0)
+                                                {
+                                                    <text>
+                                                            rolesIdsInput.setOptions({
+                                                                enable: false,
+                                                                placeholder: 'No Category Available'
+                                                            });
+                                                        rolesIdsInput._placeholder();
+                                                        rolesIdsInput._enable();
+                                                    </text>
+                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        });
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-9 offset-md-3">
+                                            <button type="submit" class="btn btn-primary">@T("Admin.Common.Save")</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <script>
+                                $(document).ready(function () {
+                                    $('#delete-selected-action-confirmation-submit-button').bind('click', function () {
+                                        var postData = {
+                                            selectedIds: selectedIds
+                                        };
+                                        addAntiForgeryToken(postData);
+                                        $.ajax({
+                                            cache: false,
+                                            type: "POST",
+                                            url: "@(Url.Action("DeleteSelected", "UnfiCategories"))",
+                                            data: postData,
+                                            error: function (jqXHR, textStatus, errorThrown) {
+                                                showAlert('deleteSelectedFailed', errorThrown);
+                                            },
+                                            complete: function (jqXHR, textStatus) {
+                                                if (jqXHR.status === 204) {
+                                                    showAlert('nothingSelectedAlert', '@T("Admin.Common.Alert.NothingSelected")');
+                                                    return;
+                                                }
+                                                updateTable('#UnfiCategories-grid');
+                                            }
+                                        });
+                                        $('#delete-selected-action-confirmation').modal('toggle');
+                                        return false;
+                                    });
+                                });
+                            </script>
+                            <nop-alert asp-alert-id="deleteSelectedFailed" />
+                            <nop-alert asp-alert-id="nothingSelectedAlert" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

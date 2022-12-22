@@ -1,0 +1,11 @@
+﻿{
+  "Group": "XcellenceIT",
+  "FriendlyName": "nopAccelerate Plus Catalog",
+  "SystemName": "XcellenceIT.Plugin.NopAcceleratePlus.Catalog",
+  "Version": "0.10.0",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "Xcellence-IT",
+  "DisplayOrder": 0,
+  "FileName": "XcellenceIT.Plugin.NopAcceleratePlus.Catalog.dll",
+  "Description": ""
+}

@@ -1,0 +1,34 @@
+
+/*Used for changing background color*/
+.btn-default,
+#checkout-form .order-summary.card input.remove-discount-button,
+#checkout-form .order-summary.card input.remove-gift-card-button,
+#checkout-form #discountgift-form input.remove-discount-button,
+.checkbox-label input:checked ~ .control__indicator,
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus,
+.btn-default:hover, .checkbox-label input:checked:focus ~ .control__indicator,
+.checkbox-label:hover input:not([disabled]):checked ~ .control__indicator,
+.column-labels label {
+    background-color: #69c3cd;
+}
+
+/*Used for changing font color*/
+#checkout-form a,
+.cart-total .order-total,
+.totals .totals-item-total label,
+.totals .totals-item-total .totals-value,
+.title p, .title p span i, .order-total strong {
+    color: #69c3cd;
+}
+
+.form-control:focus {
+    border-color: #69c3cd;
+}

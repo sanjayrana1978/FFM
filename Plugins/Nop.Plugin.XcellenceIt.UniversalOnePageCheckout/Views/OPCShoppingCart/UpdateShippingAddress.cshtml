@@ -1,0 +1,100 @@
+﻿@using Nop.Web.Models.Customer
+@model CustomerAddressEditModel 
+
+<div class="address-item" id="shiping-Address-@Model.Address.Id">
+    <ul class="address-box">
+        <li class="name">
+            @Model.Address.FirstName @Model.Address.LastName
+        </li>
+        <li class="email">
+            <label>@T("Address.Fields.Email"):</label>
+            <span>@Model.Address.Email</span>
+        </li>
+        @if (Model.Address.PhoneEnabled)
+        {
+            <li class="phone">
+                <label>@T("Address.Fields.PhoneNumber"):</label>
+                <span>@Model.Address.PhoneNumber</span>
+            </li>
+        }
+        @if (Model.Address.FaxEnabled)
+        {
+            <li class="fax">
+                <label>@T("Address.Fields.FaxNumber"):</label>
+                <span>@Model.Address.FaxNumber</span>
+            </li>
+        }
+        @if (Model.Address.CompanyEnabled && !string.IsNullOrEmpty(Model.Address.Company))
+        {
+            <li class="company">
+                @Model.Address.Company
+            </li>
+        }
+        @if (Model.Address.StreetAddressEnabled)
+        {
+            <li class="address1">
+                @Model.Address.Address1
+            </li>
+        }
+        @if (Model.Address.StreetAddress2Enabled && !string.IsNullOrEmpty(Model.Address.Address2))
+        {
+            <li class="address2">
+                @Model.Address.Address2
+            </li>
+        }
+        @if (Model.Address.CityEnabled && !string.IsNullOrEmpty(Model.Address.City)|| 
+            Model.Address.CountyEnabled && !string.IsNullOrEmpty(Model.Address.County) || 
+            Model.Address.StateProvinceEnabled && !string.IsNullOrEmpty(Model.Address.StateProvinceName) || 
+            Model.Address.ZipPostalCodeEnabled && !string.IsNullOrEmpty(Model.Address.ZipPostalCode))
+        {
+            <li class="city-state-zip">
+                @if (Model.Address.CityEnabled && !string.IsNullOrEmpty(Model.Address.City))
+                {
+                    @Model.Address.City
+                    @if (Model.Address.CountyEnabled && !string.IsNullOrEmpty(Model.Address.County) || 
+                        Model.Address.StateProvinceEnabled && !string.IsNullOrEmpty(Model.Address.StateProvinceName) || 
+                        Model.Address.ZipPostalCodeEnabled && !string.IsNullOrEmpty(Model.Address.ZipPostalCode))
+                    {
+                        <text>,</text>
+                    }
+                }
+                @if (Model.Address.CountyEnabled && !string.IsNullOrEmpty(Model.Address.County))
+                {
+                    @Model.Address.County
+                    @if (Model.Address.StateProvinceEnabled && !string.IsNullOrEmpty(Model.Address.StateProvinceName) || 
+                        Model.Address.ZipPostalCodeEnabled && !string.IsNullOrEmpty(Model.Address.ZipPostalCode))
+                    {
+                        <text>,</text>
+                    }
+                }
+                @if (Model.Address.StateProvinceEnabled && !string.IsNullOrEmpty(Model.Address.StateProvinceName))
+                {
+                    @Model.Address.StateProvinceName
+                    @if (Model.Address.ZipPostalCodeEnabled && !string.IsNullOrEmpty(Model.Address.ZipPostalCode))
+                    {
+                        <text>,</text>
+                    }
+                }
+                @if (Model.Address.ZipPostalCodeEnabled && !string.IsNullOrEmpty(Model.Address.ZipPostalCode))
+                {
+                    @Model.Address.ZipPostalCode
+                }
+            </li>
+        }
+        @if (Model.Address.CountryEnabled && !string.IsNullOrEmpty(Model.Address.CountryName))
+        {
+            <li class="country">
+                @Model.Address.CountryName
+            </li>
+        }
+        @if (!string.IsNullOrEmpty(Model.Address.FormattedCustomAddressAttributes))
+        {
+            <li class="custom-attributes-view">
+                @Html.Raw(Model.Address.FormattedCustomAddressAttributes)
+            </li>
+        }
+    </ul>
+    <div class="select-button">
+        <button type="button" class="button-1 select-shipping-address-button" onclick="setLocation('@Url.RouteUrl("CheckoutSelectShippingAddress", new {addressid = Model.Address.Id})')">@T("Checkout.ShipToThisAddress")</button>
+    </div>
+</div>

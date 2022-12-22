@@ -1,0 +1,243 @@
+﻿@model XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Models.CatalogFacetSettingsModel
+@{
+    NopHtml.SetActiveMenuItemSystemName("XcellenceIT.Plugin.NopAcceleratePlus.Catalog.CatalogFacet");
+}
+<div class="card-group">
+    <div class="card card-default">
+        <div class="card-body">
+
+            <!-- EnableFacet Filter -->
+            <div class="form-group row" id="enableProductTagFacet">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_EnableFacetFilter_OverrideForStore" asp-input="ProductTag_EnableFacetFilter" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_EnableFacetFilter" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_EnableFacetFilter" />
+                </div>
+            </div>
+
+            <!-- WidgetZone -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_WidgetZonesNameForFacetFilter_OverrideForStore" asp-input="ProductTag_WidgetZonesNameForFacetFilter" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_WidgetZonesNameForFacetFilter" />
+                </div>
+                <div class="col-md-3">
+                    <nop-select asp-for="ProductTag_WidgetZonesNameForFacetFilter" asp-items="Model.AvailableWidgetZonesForFacetFilter" />
+                </div>
+            </div>
+
+            <!-- Category -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_EnableFacetOnCategory_OverrideForStore" asp-input="ProductTag_EnableFacetOnCategory" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_EnableFacetOnCategory" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_EnableFacetOnCategory" />
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_FacetDisplayOrderOnCategory_OverrideForStore" asp-input="ProductTag_FacetDisplayOrderOnCategory" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_FacetDisplayOrderOnCategory" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_FacetDisplayOrderOnCategory" />
+                </div>
+            </div>
+
+            <!-- Manufacturer -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_EnableFacetOnManufacturer_OverrideForStore" asp-input="ProductTag_EnableFacetOnManufacturer" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_EnableFacetOnManufacturer" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_EnableFacetOnManufacturer" />
+                </div>
+
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_FacetDisplayOrderOnManufacturer_OverrideForStore" asp-input="ProductTag_FacetDisplayOrderOnManufacturer" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_FacetDisplayOrderOnManufacturer" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_FacetDisplayOrderOnManufacturer" />
+                </div>
+            </div>
+
+            <!-- Vendor -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_EnableFacetOnVendor_OverrideForStore" asp-input="ProductTag_EnableFacetOnVendor" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_EnableFacetOnVendor" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_EnableFacetOnVendor" />
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_FacetDisplayOrderOnVendor_OverrideForStore" asp-input="ProductTag_FacetDisplayOrderOnVendor" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_FacetDisplayOrderOnVendor" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_FacetDisplayOrderOnVendor" />
+                </div>
+            </div>
+
+            <!-- Product Tag -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_EnableFacetOnProductTag_OverrideForStore" asp-input="ProductTag_EnableFacetOnProductTag" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_EnableFacetOnProductTag" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_EnableFacetOnProductTag" />
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_FacetDisplayOrderOnProductTag_OverrideForStore" asp-input="ProductTag_FacetDisplayOrderOnProductTag" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_FacetDisplayOrderOnProductTag" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_FacetDisplayOrderOnProductTag" />
+                </div>
+            </div>
+
+            <!-- Product Attribute  -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_EnableFacetOnProductAttributeValue_OverrideForStore" asp-input="ProductTag_EnableFacetOnProductAttributeValue" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_EnableFacetOnProductAttributeValue" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_EnableFacetOnProductAttributeValue" />
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_FacetDisplayOrderOnProductAttributeValue_OverrideForStore" asp-input="ProductTag_FacetDisplayOrderOnProductAttributeValue" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_FacetDisplayOrderOnProductAttributeValue" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_FacetDisplayOrderOnProductAttributeValue" />
+                </div>
+            </div>
+
+            <!-- Specifications Attribute -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_EnableFacetOnSpecificationAttributeValue_OverrideForStore" asp-input="ProductTag_EnableFacetOnSpecificationAttributeValue" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_EnableFacetOnSpecificationAttributeValue" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_EnableFacetOnSpecificationAttributeValue" />
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_FacetDisplayOrderOnSpecificationAttributeValue_OverrideForStore" asp-input="ProductTag_FacetDisplayOrderOnSpecificationAttributeValue" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_FacetDisplayOrderOnSpecificationAttributeValue" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_FacetDisplayOrderOnSpecificationAttributeValue" />
+                </div>
+            </div>
+
+            <!-- StockAvaibility Attribute -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_EnableFacetOnStockAvailability_OverrideForStore" asp-input="ProductTag_EnableFacetOnStockAvailability" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_EnableFacetOnStockAvailability" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_EnableFacetOnStockAvailability" />
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_FacetDisplayOrderOnStockAvailability_OverrideForStore" asp-input="ProductTag_FacetDisplayOrderOnStockAvailability" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_FacetDisplayOrderOnStockAvailability" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_FacetDisplayOrderOnStockAvailability" />
+                </div>
+            </div>
+
+
+            <!-- ProductRating Attribute -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_EnableFacetOnProductRating_OverrideForStore" asp-input="ProductTag_EnableFacetOnProductRating" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_EnableFacetOnProductRating" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_EnableFacetOnProductRating" />
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_FacetDisplayOrderOnProductRating_OverrideForStore" asp-input="ProductTag_FacetDisplayOrderOnProductRating" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_FacetDisplayOrderOnProductRating" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_FacetDisplayOrderOnProductRating" />
+                </div>
+            </div>
+            <!--  Price Range Filter -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_EnableRangePriceFilter_OverrideForStore" asp-input="ProductTag_EnableRangePriceFilter" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_EnableRangePriceFilter" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_EnableRangePriceFilter" />
+                </div>
+            </div>
+
+            <!--Sort by -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_FacetSortingOrder_OverrideForStore" asp-input="ProductTag_FacetSortingOrder" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_FacetSortingOrder" />
+                </div>
+                <div class="col-md-2">
+                    <nop-select asp-for="ProductTag_FacetSortingOrder" asp-items="Model.AvailableFacetSortingOptions" />
+                </div>
+            </div>
+
+            <!--Search Box Count -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_FacetSearchBoxCount_OverrideForStore" asp-input="ProductTag_FacetSearchBoxCount" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_FacetSearchBoxCount" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_FacetSearchBoxCount" />
+                </div>
+            </div>
+
+            <!--ShowMoreLess Option -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_EnableFacetShowMoreOptions_OverrideForStore" asp-input="ProductTag_EnableFacetShowMoreOptions" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_EnableFacetShowMoreOptions" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTag_EnableFacetShowMoreOptions" />
+                </div>
+            </div>
+
+            <!--Include/Exclude out of stock Option -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_DefaultStockAvailabilityControlBehaviour_OverrideForStore" asp-input="ProductTag_DefaultStockAvailabilityControlBehaviour" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_DefaultStockAvailabilityControlBehaviour" />
+                </div>
+                <div class="col-md-3">
+                    <nop-select asp-for="ProductTag_DefaultStockAvailabilityControlBehaviour" asp-items="Model.AvailableDefaultStockAvailabilityControlBehaviour" />
+                </div>
+            </div>
+
+            <!--Collapse status -->
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTag_CollapseStatusForFacetFilter_OverrideForStore" asp-input="ProductTag_CollapseStatusForFacetFilter" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTag_CollapseStatusForFacetFilter" />
+                </div>
+                <div class="col-md-2">
+                    <nop-select asp-for="ProductTag_CollapseStatusForFacetFilter" asp-items="Model.AvailableCollapseStatusForFacetFilter" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

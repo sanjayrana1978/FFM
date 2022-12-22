@@ -1,0 +1,383 @@
+﻿<Language Name="English">
+  <LocaleResource Name="Plugins.Misc.FFM.XcellenceIT.Menu">
+    <Value>XcellenceIt</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM">
+    <Value>FFM</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configure">
+    <Value>Configure</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Enable">
+    <Value>Enable</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Enable.Hint">
+    <Value>Apply to your store.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.Api">
+    <Value>Api</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.Api.Hint">
+    <Value>Enter Api</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.RequestHeaderName">
+    <Value>Request header name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.RequestHeaderName.Hint">
+    <Value>Enter request header name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.PrimaryKey">
+    <Value>Primary key</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.PrimaryKey.Hint">
+    <Value>Enter primary key</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.SecondaryKey">
+    <Value>Secondary key</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.SecondaryKey.Hint">
+    <Value>Enter secondary key</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.PageSize">
+    <Value>PageSize</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.PageSize.Hint">
+    <Value>Enter a page size</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.UNFINumber">
+    <Value>UNFI Number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.UNFINumber.Hint">
+    <Value>FFM Account number with UNFI</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.FtpHost">
+    <Value>Ftp host</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.FtpHost.Hint">
+    <Value>Enter a ftp host</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.FtpUserName">
+    <Value>Ftp user name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.FtpUserName.Hint">
+    <Value>Enter a ftp user name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.FtpPassword">
+    <Value>Ftp password</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.FtpPassword.Hint">
+    <Value>Enter a ftp password</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.ScheduleTask.UpdateProductsFromApiTask">
+    <Value>Add products from api</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Button.ResetCustomerPassword">
+    <Value>Reset customers password</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.FFMResetCustomerPassword.Success">
+    <Value>Mail sended successfully for reset password to customers</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.FFMResetCustomerPassword.Failed">
+    <Value>Mail sended not for reset password to customers</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.Api.Required">
+    <Value>Api field is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.Api.Required">
+    <Value>Api field is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.RequestHeaderName.Required">
+    <Value>Request header name field is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.PrimaryKey.Required">
+    <Value>Primary key field is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.SecondaryKey.Required">
+    <Value>Secondary key field is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.PageSize.Required">
+    <Value>PageSize field is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.UNFINumber.Required">
+    <Value>UNFI number field must be greater than 0</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.FtpHost.Required">
+    <Value>Ftp host field is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.FtpUserName.Required">
+    <Value>Ftp user name field is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.FtpPassword.Required">
+    <Value>Ftp password field is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.FileGenerate.Error">
+    <Value>Something went wrong of generate Order file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.FileRead.Error">
+    <Value>Something went wrong of read file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.ScheduleTask.ReadFilesFromFTP">
+    <Value>Downloads files from ftp server</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.SendOrderConformationMailToCustomer.Error">
+    <Value>Something went wrong on send order Conformation mail to customer </Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.FileDowanload.Error">
+    <Value>Something went wrong on dowanload file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.OrderID.Error">
+    <Value>Order id null Something went wrong </Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Order.Error">
+    <Value>Order is null Something went wrong </Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.CustomerId.Error">
+    <Value>Customer Id is null Something went wrong </Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.OrderFileGenerate.Success">
+    <Value>Order file generated successfully on system with name like {0} </Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.FTPOrderFileGenerate.Success">
+    <Value>Order file generated successfully on FTP sever with name like {0} </Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.OrderNotFound.Error">
+    <Value>Not found {1}/{0} file order deatils </Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.FTPFilesDowanloads.Success">
+    <Value>Ftp {0} file dowanloaed into system successfully</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company">
+    <Value>Company</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.AddNew">
+    <Value>Add a new company</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.EditCompanyDetails">
+    <Value>Edit company details</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.BackToList">
+    <Value>back to company list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Added">
+    <Value>The new company has been added successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Updated">
+    <Value>The company has been updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Deleted">
+    <Value>The company has been deleted successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Info">
+    <Value>Company info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Customer">
+    <Value>Customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Fields.Name.Hint">
+    <Value>Company Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Fields.Point">
+    <Value>Point</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Fields.Point.Hint">
+    <Value>Point</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Fields.CustomerRole">
+    <Value>Customer Role</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.CompanyCustomer">
+    <Value>You need to save the company before you can add related customer for this product page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Customer.AddNew">
+    <Value>Add a new customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.OrderCancelNotFound.Error">
+    <Value>Not found {1}/{0} file order Quantity </Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Name.Required">
+    <Value>Company name field is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Point.Required">
+    <Value>Point field must be greater than 0</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Errors.CompanyNotFound">
+    <Value>No company found with the specified id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Errors.CustomerRoleNotFound">
+    <Value>No customerRole found with the specified id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.Errors.CustomerNotFound">
+    <Value>No customer found with the specified id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.SchedularTask.AddRewardPoint.Message">
+    <Value>customer role wise reward point Add by {0} company</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.SchedularTask.RemoveRewardPoint.Message">
+    <Value>customer role wise reward point remove by {0} company</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.TackingFile.Error">
+    <Value>Something went wrong in {1}/{0} file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.ShoppingCart.Totals.CustomerRewardPoints">
+    <Value>Customer RewardPoints</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Common.Encrypt">
+    <Value>Encryption</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.FFM.Fields.Picture.Hint">
+    <Value>Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.FFM.Fields.Picture">
+    <Value>Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.FFM.TabName.Picture">
+    <Value>Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Catalog.Attributes.SpecificationAttributes.SpecificationAttribute.Picture.Tab.Updated">
+    <Value>The Picture has been updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.EncryptCryptography.Success">
+    <Value>Customers and addresses all data encrypted successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Catalog.Attributes.SpecificationAttributes.SpecificationAttribute.Picture.SaveBeforeEdit">
+    <Value>You need to save the specification attribute before you can add picture for this specification attribute page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Fields.IngredientsInfomation">
+    <Value>Ingredients</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Fields.IngredientsInfomation.Hint">
+    <Value>IngredientsInfomation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Fields.NutritionalInfomation.Hint">
+    <Value>NutritionalInfomation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Fields.NutritionalInfomation">
+    <Value>Nutritional Infomation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.FFM.TabName.ProductAdditionalInfo">
+    <Value>ProductAdditionalInfo</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Product.ProductAdditionalInfoModel.SaveBeforeEdit">
+    <Value>You need to save the product before you can add Product Additonal infomation for this Product page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Product.ProductAdditionalInfo.Tab.Updated">
+    <Value>The ProductAdditionalInfo has been updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Fields.IngredientsInfomation">
+    <Value>INGREDIENTS</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Fields.NutritionalInfomation">
+    <Value>NUTRITIONAL INFORMATION</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Catalog.Attributes.SpecificationAttributes.Picture.Updated">
+    <Value>First Upload Your Picture.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Configure.Encrypt.Note">
+    <Value>Note: This Action is Encrypt All Customer And Address Data </Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Configure.Encrypt">
+    <Value>Are You Want To Sure To Perform This Action..??</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.ResetCustomerPassword.Note">
+    <Value>Note: This Action Perform To Reset the Customer Password</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.ResetCustomerPassword">
+    <Value>Are You Want To Sure To Perform This Action..??</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Popup.Button">
+    <Value>Yes</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.ResetCustomerPassword.FailNotification">
+    <Value>Something going Wrong..!!</Value>
+  </LocaleResource>
+  
+  <LocaleResource Name="Plugins.Misc.FFM.Admin.Encrypt.FailNotification">
+    <Value>Something going Wrong..!!</Value>
+  </LocaleResource>
+  
+  <LocaleResource Name="Plugins.Misc.FFM.ProductIngredients">
+    <Value>Product Ingredients Instert Time ProductId-{0} is null </Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.UpdateProductIngredients">
+    <Value>Product Ingredients Update Time ProductId-{0} is null </Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Plugins.Misc.FFM.OrderPlace.RemoveRewardPoint.After.OrderPlace.Message">
+    <Value>Updated customer reward point</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.UnfiCategories">
+    <Value>UNFI Categories</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.UnfiCategories.Fields.Categories">
+    <Value>Categories</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.UnfiCategories.Add">
+  	<Value>Added Mapped Categories</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.RedirectToCategory">
+  	<Value>Redirect to category</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.RedirectToCategory.Hint">
+	<Value>Select category to redirect</Value>
+  </LocaleResource> 	
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.SubsidizedCode">
+	<Value>Subsidized Code</Value>
+  </LocaleResource> 
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.SubsidizedCode.Hint">
+	<Value>Insert subsidized code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.SubsidizedCode.Available">
+  	<Value>Company code matched with {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.SubsidizedCode.Unavailable">
+  	<Value>Subsidized Code does not match with our records. Kindly retry or contact FFM representative</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Company.AddRewardPoints">
+		<Value>Registered as subsidized customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.CustomerAttribute">
+		<Value>Customer attribute</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.CustomerAttribute.Hint">
+		<Value>Select customer attribute</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.CustomerAttributeValue">
+		<Value>Customer attribute value</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Configuration.CustomerAttributeValue.Hint">
+		<Value>select customer attribute value according to customer attribute</Value>
+  </LocaleResource> 
+  <LocaleResource Name="Plugins.Misc.FFM.RestrictRegistration">
+		<Value>Free From Market is currently open to shoppers with a referral. But we promise to let you know once you're able to shop. Stay tuned!</Value>
+  </LocaleResource> 
+  <LocaleResource Name="plugins.misc.ffm.CustomerAttributes">
+		<Value>FFM Customer Attributes</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.ImportToCSV.ProductName">
+		<Value>Product name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.ImportToCSV.Sku">
+		<Value>Sku</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.ImportToCsv">
+		<Value>Import to CSV</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.ActivityLog.ImportToCSV">
+		<Value>{0} imported to CSV</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.ReferralQuestion.Yes">
+  	<Value>Yes, I was referred</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.ReferralQuestion.No">
+  	<Value>No, I was NOT referred</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.FFM.Field.ReferralQuestion">
+  	<Value>Were you referred by a doctor / organization / employer?</Value>
+  </LocaleResource>
+	<LocaleResource Name="Plugins.Misc.FFM.Field.ReferralCode">
+		<Value>6 Digit Referral Code</Value>
+	</LocaleResource>
+</Language>

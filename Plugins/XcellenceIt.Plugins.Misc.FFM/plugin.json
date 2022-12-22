@@ -1,0 +1,11 @@
+{
+  "Group": "XcellenceIt",
+  "FriendlyName": "FFM",
+  "SystemName": "Misc.FFM",
+  "Version": "3.0.0",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "XcellenceIt team",
+  "DisplayOrder": 1,
+  "FileName": "XcellenceIt.Plugins.Misc.FFM.dll",
+  "Description": ""
+}

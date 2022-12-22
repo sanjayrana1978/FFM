@@ -1,0 +1,15 @@
+﻿We have develop phase 1 and phase 2 both in same branch 1.0.0 
+
+Phase 1 :
+(1) Read client data using provided API and save that data into nop by create product, category , manufacture etc. 
+(2) Generate files into FTP server while order place, tracking, shipping , confirmation   
+(3) Customer table data save into encryption form and get data into decrypted form  (Still working)
+(5) Restore client database and reset all customer passwords by plugin
+
+Phase 2 :
+(1) Add and modify one page checkout plugin as per client requirements (Edit shipping address from checkout page)
+(2) Monthly Credit Points, Show credit points into cart page 
+(3) Add image into product specification attribute 
+(4) Customer + Address table data save into encryption form and get data into decrypted form   (Still working)
+
+

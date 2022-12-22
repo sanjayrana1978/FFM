@@ -1,0 +1,119 @@
+﻿@model XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Models.CatalogFacetSettingsModel
+@{
+    //page title
+    ViewBag.Title = T("XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Title.Facet").Text;
+    Layout = "_AdminLayout";
+    NopHtml.SetActiveMenuItemSystemName("XcellenceIT.Plugin.NopAcceleratePlus.Catalog.CatalogFacet");
+}
+@inject Nop.Core.IWebHelper webHelper
+<link href="~/Plugins/NopAcceleratePlus.Search/Content/css/admin-search-configure.min.css" rel="stylesheet" />
+
+<nop-antiforgery-token />
+
+<form asp-controller="NopAcceleratePlusAdminCatalog" asp-action="CatalogFacetSettings" method="post">
+    <div class="content-header clearfix">
+        <h1 class="float-left">
+            @T("XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Title.Facet")
+        </h1>
+        <h1 class="float-right">
+            <button type="submit" name="save" class="btn bg-blue">
+                <i class="fa fa-floppy-o"></i>
+                @T("Admin.Common.Save")
+            </button>
+        </h1>
+    </div>
+    <div class="content-header clearfix">
+        @await Component.InvokeAsync("StoreScopeConfiguration")
+    </div>
+    <div asp-validation-summary="All"></div>
+    <div class="content">
+        <div class="form-horizontal">
+            <nop-tabs id="catalogconfiguration">
+                <nop-tab asp-name="tab-category" asp-title="@T("Plugins.NopAcceleratePlus.Search.tabcategory")" asp-default="true">@await Html.PartialAsync("~/Plugins/NopAcceleratePlus.Catalog/Views/Admin/_CategoryFacetSetting.cshtml", Model)</nop-tab>
+                <nop-tab asp-name="tab-manufacturer" asp-title="@T("Plugins.NopAcceleratePlus.Search.tabmanufacturer")">@await Html.PartialAsync("~/Plugins/NopAcceleratePlus.Catalog/Views/Admin/_ManufacturerFacetSetting.cshtml", Model)</nop-tab>
+                <nop-tab asp-name="tab-producttag" asp-title="@T("Plugins.NopAcceleratePlus.Search.tabproducttag")">@await Html.PartialAsync("~/Plugins/NopAcceleratePlus.Catalog/Views/Admin/_ProductTagFacetSetting.cshtml", Model)</nop-tab>
+                <nop-tab asp-name="tab-vendor" asp-title="@T("Plugins.NopAcceleratePlus.Search.tabvendor")">@await Html.PartialAsync("~/Plugins/NopAcceleratePlus.Catalog/Views/Admin/_VendorFacetSetting.cshtml", Model)</nop-tab>
+            </nop-tabs>
+        </div>
+        @await Component.InvokeAsync("NopAcceleratePlusCatalogVersion")
+    </div>
+</form>
+<script>
+    $(document).ready(function () {
+        $("#@Html.IdFor(model => model.Category_EnableFacetFilter)").click(toggleCategory_EnableFacetFilter);
+        toggleCategory_EnableFacetFilter();
+
+        $("#@Html.IdFor(model => model.Manufacturer_EnableFacetFilter)").click(toggleManufacturer_EnableFacetFilter);
+        toggleManufacturer_EnableFacetFilter();
+
+        $("#@Html.IdFor(model => model.ProductTag_EnableFacetFilter)").click(toggleProductTag_EnableFacetFilter);
+        toggleProductTag_EnableFacetFilter();
+
+        $("#@Html.IdFor(model => model.Vendor_EnableFacetFilter)").click(toggleVendor_EnableFacetFilter);
+        toggleVendor_EnableFacetFilter();
+
+        function toggleCategory_EnableFacetFilter() {
+            if ($('#@Html.IdFor(model => model.Category_EnableFacetFilter)').is(':checked')) {
+                $('#tab-category').find('.form-group').show();
+            } else {
+                $('#tab-category').find('.form-group').hide();
+                $('#enableCategoryFacet').show();
+            }
+        }
+
+        function toggleManufacturer_EnableFacetFilter() {
+            if ($('#@Html.IdFor(model => model.Manufacturer_EnableFacetFilter)').is(':checked')) {
+                $('#tab-manufacturer').find('.form-group').show();
+            } else {
+                $('#tab-manufacturer').find('.form-group').hide();
+                $('#enableManufacturerFacet').show();
+            }
+        }
+
+        function toggleProductTag_EnableFacetFilter() {
+            if ($('#@Html.IdFor(model => model.ProductTag_EnableFacetFilter)').is(':checked')) {
+                $('#tab-producttag').find('.form-group').show();
+            } else {
+                $('#tab-producttag').find('.form-group').hide();
+                $('#enableProductTagFacet').show();
+            }
+        }
+
+        function toggleVendor_EnableFacetFilter() {
+            if ($('#@Html.IdFor(model => model.Vendor_EnableFacetFilter)').is(':checked')) {
+                $('#tab-vendor').find('.form-group').show();
+            } else {
+                $('#tab-vendor').find('.form-group').hide();
+                $('#enableVendorFacet').show();
+            }
+        }
+    });
+
+    $('input[type=checkbox]').each(function () {
+        var item = $(this)[0].id;
+        if (!item.includes('OverrideForStore')) {
+            if ($(this).prop("checked") == false) {
+                $(this).parent().next().hide();
+                $(this).parent().next().next().hide();
+            }
+            else if ($(this).prop("checked") == true) {
+                $(this).parent().next().show();
+                $(this).parent().next().next().show();
+            }
+        }
+    });
+
+    $('input[type="checkbox"]').click(function () {
+        var item = $(this)[0].id;
+        if (!item.includes('OverrideForStore')) {
+            if ($(this).prop("checked") == false) {
+                $(this).parent().next().hide();
+                $(this).parent().next().next().hide();
+            }
+            else if ($(this).prop("checked") == true) {
+                $(this).parent().next().show();
+                $(this).parent().next().next().show();
+            }
+        }
+    });
+</script>

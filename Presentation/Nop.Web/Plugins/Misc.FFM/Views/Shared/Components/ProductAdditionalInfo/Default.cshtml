@@ -1,0 +1,15 @@
+﻿@model ProductAdditionalInfoModel
+@using XcellenceIt.Plugins.Misc.FFM.Models.ProducstAdditinalInfo
+
+@inject Nop.Services.Common.IGenericAttributeService genericAttributeService
+@inject IWorkContext workContext
+
+
+@{
+    const string hideInfoBlockAttributeName = "ManufacturerPage.HideInfoBlock";
+    var customer = await workContext.GetCurrentCustomerAsync();
+    var hideInfoBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideInfoBlockAttributeName);
+
+}
+
+<nop-card asp-name="Product-pictures" asp-icon="fas fa-info" asp-title="@T("Admin.FFM.TabName.ProductAdditionalInfo")" asp-hide-block-attribute-name="@hideInfoBlockAttributeName" asp-hide="@hideInfoBlock" asp-advanced="false">@await Html.PartialAsync("~/Plugins/Misc.FFM/Views/Shared/Components/ProductAdditionalInfo/ProductAdditionalInfo.cshtml", Model)</nop-card>

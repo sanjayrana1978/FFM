@@ -1,0 +1,77 @@
+﻿@model XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Models.CatalogSettingModel
+@{
+    NopHtml.SetActiveMenuItemSystemName("XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Configure");
+}
+
+<div class="cards-group">
+    <div class="card card-default">
+        <div class="card-body">
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="EnableProductTag_OverrideForStore" asp-input="EnableProductTag" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="EnableProductTag" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="EnableProductTag" />
+                    <span asp-validation-for="EnableProductTag"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlproducttagajaxfaceting">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTagAjaxFaceting_OverrideForStore" asp-input="ProductTagAjaxFaceting" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTagAjaxFaceting" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTagAjaxFaceting" />
+                    <span asp-validation-for="ProductTagAjaxFaceting"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlproducttaginfinitescrolling">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTagInfiniteScrolling_OverrideForStore" asp-input="ProductTagInfiniteScrolling" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTagInfiniteScrolling" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTagInfiniteScrolling" />
+                    <span asp-validation-for="ProductTagInfiniteScrolling"></span>
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTagInfiniteScrollingTillPage_OverrideForStore" asp-input="ProductTagInfiniteScrollingTillPage" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTagInfiniteScrollingTillPage" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTagInfiniteScrollingTillPage" />
+                    <span asp-validation-for="ProductTagInfiniteScrollingTillPage"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlproducttagshownoofproductsfound">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTagShowNoOfProductsFound_OverrideForStore" asp-input="ProductTagShowNoOfProductsFound" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTagShowNoOfProductsFound" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTagShowNoOfProductsFound" />
+                    <span asp-validation-for="ProductTagShowNoOfProductsFound"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlproductTagsearchWithin">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTagEnableSearchWithin_OverrideForStore" asp-input="ProductTagEnableSearchWithin" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTagEnableSearchWithin" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTagEnableSearchWithin" />
+                    <span asp-validation-for="ProductTagEnableSearchWithin"></span>
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ProductTagSearchWithinSelector_OverrideForStore" asp-input="ProductTagSearchWithinSelector" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ProductTagSearchWithinSelector" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ProductTagSearchWithinSelector" />
+                    <span asp-validation-for="ProductTagSearchWithinSelector"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+﻿{
+  "Group": "XcellenceIT",
+  "FriendlyName": "nopAccelerate Plus Search",
+  "SystemName": "XcellenceIT.Plugin.NopAcceleratePlus.Search",
+  "Version": "0.10.0",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "Xcellence-IT",
+  "DisplayOrder": -1,
+  "FileName": "XcellenceIT.Plugin.NopAcceleratePlus.Search.dll",
+  "Description": ""
+}

@@ -1,0 +1,19 @@
+﻿@inherits Nop.Web.Framework.Mvc.Razor.NopRazorPage<TModel>
+@inject Nop.Services.Common.IGenericAttributeService genericAttributeService
+@inject IWorkContext workContext
+@inject INopHtmlHelper NopHtml
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Nop.Web.Framework
+
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@using Nop.Web.Framework.UI
+@using Nop.Web.Framework.Extensions
+@using System.Text.Encodings.Web
+@using Nop.Web.Models.ShoppingCart
+@using Nop.Plugin.XcellenceIt.UniversalOnePageCheckout;
+@using Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Models;
+@using Nop.Web.Framework.Infrastructure
+@using Nop.Core
+@using Nop.Web.Extensions;
+@using Nop.Core.Domain.Orders;
+@using Nop.Core.Domain.Tax

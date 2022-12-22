@@ -1,0 +1,112 @@
+﻿--------------------------------------------------------------------------------------------------------------------------------------
+Encrypt Columns Values
+--------------------------------------------------------------------------------------------------------------------------------------
+Date : 01-03-2022 02:04 PM
+
+Step 1:
+->https://prnt.sc/fhMaSSSN5ESp
+- Right click on table and select Encrypt columns options.
+
+Step 2:
+->https://prnt.sc/-KGHtJGe0lQ3  
+- Select Column selection from left panel.
+- Select table + button from right panel.
+
+Step 3:
+->https://prnt.sc/rLX_s6iQfLk5
+- Check checkbox column name for encryption column data.
+- Then select encryption type.
+
+Step 4:
+->https://prnt.sc/lBy_DOw6ktcl
+- Select Deterministic form dropdown list.
+
+->https://prnt.sc/BWGInvRtCjBW
+- Select Encryption key.
+  If no one encryption key available so it generated auto otherwise 
+  available so you can select any one for encrypt column data. 
+
+->https://prnt.sc/4s9EmbGOV6v8
+- Click on next button after select all value which explain above steps.
+
+Step 5:
+->https://prnt.sc/c8oFW1A5NPqb
+- Click on next button .
+
+Step 6:
+->https://prnt.sc/1KCEoXUTPjy2
+- Check on Procced to finish now if not selected otherwise by default this selected.
+- Then click on next button.
+
+Step 7:
+https://prnt.sc/uFpmEhBsvOSq
+- Click on finish button.
+
+Step 8:
+https://prnt.sc/wujnBn4FbN45
+- After complete result success click on close.
+
+->Then Add "Column Encryption Setting=enabled" on appsettings file connection string.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Export Certificate file for other windows.
+--------------------------------------------------------------------------------------------------------------------------------------
+(1)https://prnt.sc/FsCsQQeA-7h4
+- Open "Manage user certificates".
+- Click Personal>Certificates 
+- Select Certificate
+
+(2)https://prnt.sc/Hn3vrbHYiotX
+- Right click on certificates.
+- Select All Tasks>Export
+
+(3)https://prnt.sc/RL_XR0ZgIuTP 
+- Click on Next button.
+
+(4)https://prnt.sc/OhIKvaYiudBv
+- Select "Yes,export the private key" then click on Next button.
+
+(5)https://prnt.sc/ziJFWI65z0cf
+- Click on Next button.
+
+(6)https://prnt.sc/G25Qi0eaaGW0
+- Add security password .
+- Then click on Next button.
+
+(7)https://prnt.sc/Rv0wVADUYq3K
+- Browse location for export file.
+- Click on Next button.
+
+(8)https://prnt.sc/14QlB1w71OWs
+- Click on Finish button.
+
+(9)https://prnt.sc/Sv-HOMtqnyEl
+- Certificate export successfully.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Import Certificate file for other windows.
+--------------------------------------------------------------------------------------------------------------------------------------
+(1)https://prnt.sc/RNrQBarJoC0s
+- Open "Manage user certificates".
+
+(2)https://prnt.sc/Hzey2dWPWqkI
+- Click Personal>Certificates>All Tasks>Import 
+
+(3)https://prnt.sc/6VB-MGVcetfV
+- Click on Next button.
+
+(4)https://prnt.sc/NrsYIjFZOQGu
+- Select certificate file click on Browse button.
+
+(5)https://prnt.sc/n7DqpYHUuRXc
+- Enter a password.
+- Click on Next button.
+
+(6)https://prnt.sc/cD8vt2otysyR
+- Click on Next button.
+
+(7)https://prnt.sc/a6aBkoyhXfyL
+- Click on Finish button.
+
+(8)https://prnt.sc/KphiBl57suBm
+- Import certificate successfully.

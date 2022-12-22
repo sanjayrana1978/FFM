@@ -1,0 +1,211 @@
+﻿@model CategoryNavigationModel
+
+@functions {
+    bool BreadCrumbContainsCurrentCategoryId(CategorySimpleModel category)
+    {
+        if (Model.CurrentCategoryId == 0)
+            return false;
+
+        if (category.Id == Model.CurrentCategoryId)
+            return true;
+
+        foreach (var subCategory in category.SubCategories)
+        {
+            if (BreadCrumbContainsCurrentCategoryId(subCategory))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    async Task CategoryLine(CategoryNavigationModel.CategoryLineModel lineModel, int isCategory, int foundedCategoryLavel)
+    {
+        var active = lineModel.Category.Id == lineModel.CurrentCategoryId || lineModel.Category.SubCategories.Count(BreadCrumbContainsCurrentCategoryId) > 0;
+        var last = lineModel.Category.Id == lineModel.CurrentCategoryId;
+        var liClass = active ? "active" : "inactive";
+        if (last)
+        {
+            liClass += " last";
+        }
+
+        if (foundedCategoryLavel == -1)
+        {
+            if (lineModel.Category.Id == lineModel.CurrentCategoryId)
+            {
+                foundedCategoryLavel = isCategory;
+            }
+            else if (lineModel.Category.SubCategories.Any(sc => sc.Id == lineModel.CurrentCategoryId))
+            {
+                foundedCategoryLavel = isCategory + 1;
+            }
+            else
+                foundedCategoryLavel = isCategory + 2;
+        }
+
+
+        @switch (foundedCategoryLavel)
+        {
+            case 0:
+                {
+                    <li class="@liClass expandable">
+                        <a href="@Url.RouteUrl("Category", new { SeName = lineModel.Category.SeName })">
+                            @lineModel.Category.Name
+                            @if (lineModel.Category.NumberOfProducts.HasValue)
+                            {
+                                <text> </text>
+
+                                @T("Categories.TotalProducts", lineModel.Category.NumberOfProducts.Value)
+                            }
+                        </a>
+                        @if (@lineModel.Category.SubCategories.Count > 0)
+                        {
+                            //<span class="expandable-icon"></span>
+                            <button class="expand-icon" onclick="myFunction(@lineModel.Category.Id)"></button>
+                        }
+                        @{
+                            if (lineModel.Category.SubCategories.Count > 0)
+                            {
+                                <ul class="sublist" id="@lineModel.Category.Id">
+                                    @foreach (var subCategory in lineModel.Category.SubCategories)
+                                    {
+                                        var categoryLineModel = new CategoryNavigationModel.CategoryLineModel
+                                {
+                                    CurrentCategoryId = lineModel.CurrentCategoryId,
+                                    Category = subCategory
+                                };
+                                        await CategoryLine(categoryLineModel, isCategory + 1, foundedCategoryLavel);
+                                    }
+                                </ul>
+                            }
+                        }
+                    </li>
+                    break;
+                }
+            case 1:
+                {
+                    <li class="@liClass expandable">
+                        @if (active || isCategory > foundedCategoryLavel)
+                        {
+                            <a href="@Url.RouteUrl("Category", new { SeName = lineModel.Category.SeName })">
+                                @lineModel.Category.Name
+                                @if (lineModel.Category.NumberOfProducts.HasValue)
+                                {
+                                    <text> </text>
+
+                                    @T("Categories.TotalProducts", lineModel.Category.NumberOfProducts.Value)
+                                }
+                            </a>
+                            @if (@lineModel.Category.SubCategories.Count > 0)
+                            {
+                                //<span class="expandable-icon"></span>
+                                <button class="expand-icon" onclick="myFunction(@lineModel.Category.Id)"></button>
+                            }
+                            {
+                                if (lineModel.Category.SubCategories.Count > 0)
+                                {
+                                    <ul class="sublist" id="@lineModel.Category.Id">
+                                        @foreach (var subCategory in lineModel.Category.SubCategories)
+                                        {
+                                            var categoryLineModel = new CategoryNavigationModel.CategoryLineModel
+                                        {
+                                            CurrentCategoryId = lineModel.CurrentCategoryId,
+                                            Category = subCategory
+                                        };
+                                            await CategoryLine(categoryLineModel, isCategory + 1, foundedCategoryLavel);
+                                        }
+                                    </ul>
+                                }
+                            }
+                        }
+                    </li>
+                    break;
+                }
+            case 2:
+                {
+                    <li class="@liClass expandable">
+                        @if (active || isCategory == 2)
+                        {
+                            <a href="@Url.RouteUrl("Category", new { SeName = lineModel.Category.SeName })">
+                                @lineModel.Category.Name
+                                @if (lineModel.Category.NumberOfProducts.HasValue)
+                                {
+                                    <text> </text>
+
+                                    @T("Categories.TotalProducts", lineModel.Category.NumberOfProducts.Value)
+                                }
+                            </a>
+                            @if (@lineModel.Category.SubCategories.Count > 0)
+                            {
+                                //<span class="expandable-icon"></span>
+                                <button class="expand-icon" onclick="myFunction(@lineModel.Category.Id)"></button>
+                            }
+                            if (lineModel.Category.SubCategories.Count > 0)
+                            {
+                                <ul class="sublist" id="@lineModel.Category.Id">
+                                    @foreach (var subCategory in lineModel.Category.SubCategories)
+                                    {
+                                        var categoryLineModel = new CategoryNavigationModel.CategoryLineModel
+                                    {
+                                        CurrentCategoryId = lineModel.CurrentCategoryId,
+                                        Category = subCategory
+                                    };
+                                        await CategoryLine(categoryLineModel, isCategory + 1, foundedCategoryLavel);
+                                    }
+                                </ul>
+                            }
+                        }
+                    </li>
+                    break;
+                }
+        }
+
+
+    }
+}
+
+    @if (Model.Categories.Count > 0)
+{
+    <div class="block block-category-navigation">
+        <div class="title">
+            <strong>@T("Categories")</strong>
+        </div>
+        <div class="listbox">
+            <ul class="list">
+                @foreach (var category in Model.Categories)
+                {
+                    var categoryLineModel = new CategoryNavigationModel.CategoryLineModel
+                    {
+                        CurrentCategoryId = Model.CurrentCategoryId,
+                        Category = category
+                    };
+                    await CategoryLine(categoryLineModel, 0, -1);
+                }
+            </ul>
+        </div>
+    </div>
+}
+
+<script asp-location="Footer">
+    function myFunction(id) {
+        $('#' + id).fadeToggle('slow');
+    }
+    $('.expand-icon').on('click', function(){
+       $(this).toggleClass('current');
+    });
+
+    //$(document).ready(function () {
+    //    if ($('li.active').parents("li").length > 0) {
+    //        $('li.active').parent().css("display", "block");
+    //        $('li.active').parents("ul").css("display", "block");
+    //        $('li.active').find("ul.sublist").css("display", "block");
+    //        $('li.active').find("span.expandable-icon").addClass("expand-active");
+    //        $('li.active').parents("li").find("span:first").addClass("expand-active");
+    //    }
+    //    else {
+    //        $('li.active').find("ul.sublist:first").css("display", "block");
+    //        $('li.active').find("span.expandable-icon:first").addClass("expand-active");
+    //    }
+    //});
+</script>

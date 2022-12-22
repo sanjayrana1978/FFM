@@ -1,0 +1,186 @@
+﻿@using XcellenceIt.Plugin.Misc.UniversalOnePageCheckout
+@inject IWebHelper webHelper
+@model ShoppingCartModel
+
+<div class="order-summary-content">
+    @if (Model.Warnings.Count > 0)
+    {
+    <div class="message-error">
+        <ul>
+            @foreach (var warning in Model.Warnings)
+            {
+                <li>@warning</li>
+            }
+        </ul>
+    </div>
+    }
+</div>
+<form asp-route="ShoppingCart" method="post" enctype="multipart/form-data" id="shopping-cart-form">
+    <div class="table-data">
+        <div class="cart">
+            @*<colgroup>
+                @if (Model.ShowProductImages)
+                {
+                    <col width="1" />
+                }
+                <col />
+                @if (Model.ShowVendorName)
+                {
+                    <col width="1" />
+                }
+                <col width="1" />
+                <col width="1" />
+                <col width="1" />
+            </colgroup>*@
+            @*<thead>
+                <tr>
+                    @if (Model.ShowProductImages)
+                    {
+                        <th class="product-picture">
+                            @T("ShoppingCart.Image")
+                        </th>
+                    }
+                    <th class="product">
+                        @T("ShoppingCart.Product(s)")
+                    </th>
+                    @if (Model.ShowVendorName)
+                    {
+                        <th class="vendor">
+                            @T("ShoppingCart.VendorName")
+                        </th>
+                    }
+                    <th class="unit-price">
+                        @T("ShoppingCart.UnitPrice")
+                    </th>
+                    <th class="quantity">
+                        @T("ShoppingCart.Quantity")
+                    </th>
+                    <th class="subtotal">
+                        @T("ShoppingCart.ItemTotal")
+                    </th>
+                </tr>
+            </thead>*@
+            <div class="customscroll">
+                @foreach (var item in Model.Items)
+                {
+                    <div class="product-summary">  
+                        <div class="cart-remove-button">
+                             <div class="cart-button">
+                                @if (Model.IsEditable && item.AllowItemEditing)
+                                {
+                                    var editCartItemUrl = Url.RouteUrl("Product", new { SeName = item.ProductSeName }, webHelper.GetCurrentRequestProtocol());
+                                    editCartItemUrl = webHelper.ModifyQueryString(editCartItemUrl, "updatecartitemid", item.Id.ToString());
+                                    <span class="edit-item">
+                                        <a href="@editCartItemUrl"><i class="fa fa-edit" aria-hidden="true"></i> @*@T("Common.Edit")*@</a>
+                                    </span>
+                                }
+                                @* "removefromcart" this name must be same as update cart method.Otherwise,
+                                    when for serialize key not matched so remove not happened *@
+                                <!--<span><a id="@item.Id" name="removefromcart" value="@item.Id">-->@*<i class="fa fa-times" aria-hidden="true"></i>*@@*@T("ShoppingCart.Item.Remove")*@<!--</a></span>-->
+                                @*<span><a name="WishList" value="@item.Id" id="@item.Id"><i class="fa fa-heart" aria-hidden="true"></i>@T("ShoppingCart.Item.MoveToWishlist") </a></span>*@
+                            </div>
+                        </div>
+                        @if (Model.ShowProductImages)
+                        {
+                            <div class="product-picture">
+                                <a href="@Url.RouteUrl("Product", new {SeName = item.ProductSeName})"><img alt="@item.Picture.AlternateText" src="@item.Picture.ImageUrl" title="@item.Picture.Title" /></a>
+                            </div>
+                        }
+                        <div class="product">
+                            <a href="@Url.RouteUrl("Product", new {SeName = item.ProductSeName})" class="product-name">@item.ProductName</a>
+
+                            @*@if (Model.ShowSku)
+                            {
+                                <div class="sku">
+                                    <label class="td-title">@T("ShoppingCart.SKU"):</label>
+                                    <span class="sku-number">@item.Sku</span>
+                                </div>
+                            }*@
+                            @if (!string.IsNullOrEmpty(item.AttributeInfo))
+                            {
+                                <div class="attributes">
+                                    @Html.Raw(item.AttributeInfo)
+                                </div>
+                            }
+                            @if (!string.IsNullOrEmpty(item.RecurringInfo))
+                            {
+                                <div class="recurring-info">
+                                    @Html.Raw(item.RecurringInfo)
+                                </div>
+                            }
+                            @if (!string.IsNullOrEmpty(item.RentalInfo))
+                            {
+                                <div class="rental-info">
+                                    @Html.Raw(item.RentalInfo)
+                                </div>
+                            }                                
+                            @if (item.Warnings.Count > 0)
+                            {
+                                <div class="message-error">
+                                    <ul>
+                                        @foreach (var warning in item.Warnings)
+                                        {
+                                            <li>@Html.Raw(warning)</li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                        </div>
+                        @*@if (Model.ShowVendorName)
+                        {
+                            <td class="vendor">
+                                <label class="td-title">@T("ShoppingCart.VendorName"):</label>
+                                <span class="vendor-name">@item.VendorName</span>
+                            </td>
+                        }
+                        <td class="unit-price">
+                            <label class="td-title">@T("ShoppingCart.UnitPrice"):</label>
+                            <span class="product-unit-price">@item.UnitPrice</span>
+                        </td>*@
+                        <div class="total-quantity">
+                            <div class="subtotal">
+                                <label class="td-title">@T("ShoppingCart.ItemTotal"):</label>
+                                <span class="product-subtotal">@item.SubTotal</span>
+                                @if (!string.IsNullOrEmpty(item.Discount))
+                                {
+                                    <div class="discount">
+                                        @T("ShoppingCart.ItemYouSave", item.Discount)
+                                    </div>
+                                    if (item.MaximumDiscountedQty.HasValue)
+                                    {
+                                        <div class="discount-additional-info">
+                                            @T("ShoppingCart.MaximumDiscountedQty", item.MaximumDiscountedQty.Value)
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            <div class="quantity">
+                                <label class="td-title" for="itemquantity@(item.Id)">@T("ShoppingCart.Quantity"):</label>
+                                @if (Model.IsEditable)
+                                {
+                                    if (item.AllowedQuantities.Count > 0)
+                                    {
+                                        <select name="itemquantity@(item.Id)" id="itemquantity@(item.Id)" class="qty-dropdown">
+                                            @foreach (var qty in item.AllowedQuantities)
+                                            {
+                                                <option selected="@qty.Selected" value="@qty.Value">@qty.Value</option>
+                                            }
+                                        </select>
+                                    }
+                                    else
+                                    {
+                                        <input name="itemquantity@(item.Id)" id="itemquantity@(item.Id)" type="text" value="@(item.Quantity)" class="qty-input" />
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="product-quantity">@item.Quantity</span>
+                                }
+                            </div>
+                      </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</form>

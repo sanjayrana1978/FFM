@@ -1,0 +1,492 @@
+.html-checkout-page .master-wrapper-content {
+    width: 100% !important;
+}
+.html-checkout-page .master-column-wrapper {
+    position: relative;
+    z-index: 0;
+    margin: 0 auto;
+}
+.html-checkout-page .header-menu {
+    margin: 0 auto !important;
+}
+.html-checkout-page .universal-checkout-page > .page-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.html-checkout-page .universal-checkout-page > .page-title{
+    font-weight: normal;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+.opc input[type="text"],
+.checkout-page .card-expire-date,
+.checkout-page .credit-card-type select{
+    border: 1px solid #85b175;
+    color: #2e2e2e;
+    height: 40px;
+    font-size: 12px;
+}
+.opc input[type="password"],
+.opc input[type="email"],
+.opc input[type="tel"],
+.opc textarea {
+    border: 1px solid #85b175;
+    color: #333333;
+    height: 40px;
+    font-size:12px;
+}
+.opc select {
+    background: #fff url(../Images/opc-select-arrow.png) right 10px center no-repeat;
+    padding: 8px 30px 8px 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color:#333333;
+    font-size:12px;
+}
+.opc .payment-info .info tr {
+    float: left;
+    width: 100%;
+}
+.opc .payment-info .info td select,
+.opc .payment-info .info td input {
+    margin: 5px 0 !important;
+}
+.opc .checkout-attributes dd, 
+.opc .cart-collaterals > div, 
+.opc .cart-collaterals, 
+.opc .payment-info .info tr {
+    margin: 0;
+}
+.opc .select-shipping-address,
+.opc .select-billing-address, 
+.opc .pickup-in-store {
+    margin: 0 0 15px;
+    text-align: center !important;
+}
+.opc .section {
+    width: 100%;
+    text-align: center;
+    max-width: 100%;
+    margin: 0;
+}
+.opc .section.ship-to-same-address{
+    margin: 20px 0 30px;
+}
+.opc .step {
+    padding: 15px 0;
+    margin: 0;
+    background: transparent;
+}
+.opc .address-column .step {
+    padding: 15px 0 0;
+}
+.opc .address-column .opc-block, 
+.opc .payment-info-column .opc-block {
+    margin-bottom: 20px;
+}
+.opc .discount-code-column #opc-gift-card {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    padding: 5px 10px 5px 10px;
+}
+.opc .shipping-column .step {
+    padding: 15px 0 0;
+}
+.opc .payment-method .method-list, 
+.opc .shipping-method .method-list,
+.opc .cart-collaterals, 
+.opc .cart-collaterals .deals > div {
+    background: transparent;
+}
+.opc .edit-address {
+    background: transparent;
+    width: 100%;
+    float: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.opc .confirm-order-next-step-button {
+    width: 100%;
+}
+.opc .cart-collaterals .current-code {
+    margin: 10px 0 0;
+}
+.opc .cart-collaterals .coupon-code {
+    text-align: center;
+    padding: 0;
+    border: none;
+}
+.opc .cart-collaterals .hint {
+    display:none !important;
+}
+.opc .step-title {
+    background:url('../Images/collapse-arrow.png') no-repeat right center;
+    text-align: left;
+    background-color:transparent !important;
+    margin:0;
+}
+.opc .shipping-column .step-title{
+    border:none;
+}
+.opc .cart-collaterals > div {
+    max-width: 100%;
+}
+.opc .enter-address .edit-address, 
+.opc .shipping-options, 
+.opc .estimate-shipping-result {
+    padding: 15px 0;
+    margin: 0;
+    border: none !important;
+}
+.opc .inputs {
+    width: 32%;
+    float: left;
+    font-size: inherit;
+}
+.opc .buttons {
+    clear: both;
+}
+.opc .shipping-addresses .buttons {
+    margin-bottom: 30px;
+}
+.opc .center-2 .address-column, 
+.opc .center-2 .shipping-column {
+    width: 100%;
+    float: left;
+}    
+.opc .cart-collaterals {
+    width: 100%;
+    padding: 0;
+    float: none;
+}
+.opc .cart-collaterals .deals,
+.opc #opc-discount, 
+.opc #opc-gift-card {
+    width: 100%;
+    float: left;
+}
+.opc .cart-collaterals .coupon-code input[type="text"] {
+    width: 100%;
+    height:45px;
+    border: 1px solid #85b175;
+    border-radius: 50px;
+}
+.opc .cart-collaterals .button-2 {
+    height: 45px;
+    padding:0 45px;
+    background-color: #85b175;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50px;
+    border: none;
+    font-weight:600;
+    transition:0.3s;
+}
+.opc .cart-collaterals .coupon-code input[type="submit"] {
+    float: none;
+    width: auto;
+    padding: 10px 15px;
+}
+.opc .shipping-method .method-description, 
+.opc .payment-method .payment-details {
+    margin: 5px 0;
+}
+.opc .shipping-method .method-list, 
+.opc .payment-method .method-list {
+    margin: 0 auto;
+}
+.opc .use-reward-points {
+    margin: 0 0 10px;
+    text-align:left;
+}
+.opc .payment-method .method-list li {
+    text-align: left;
+    margin:0 0 10px !important;
+}
+.opc .shipping-method .method-list li div, 
+.opc .payment-method .method-list li div{
+    background-color:transparent;
+    padding:0;
+    text-align: left !important;
+}
+.opc .shipping-method .method-list li label, 
+.opc .payment-method .method-list li label, 
+.opc .payment-info .info tr:first-child td label {
+    font-size: 14px;
+    color: #2e2e2e;
+    font-weight: 500;
+    display: initial;
+}
+.opc .payment-method .payment-details .payment-description, 
+.opc .shipping-method .method-description {
+    font-size: 12px;
+    color: #878787;
+    font-weight: 300;
+    line-height: 18px;
+    word-break: break-word;
+}
+.opc .payment-info .info {
+    padding: 0;
+    margin: 0 0 30px !important;
+}
+.opc .payment-info .info td:first-child {
+    text-align: left;
+}
+.opc .payment-info .info td {
+    padding: 0;
+    background: transparent;
+}
+.opc .payment-info .info td select#CreditCardType {
+    width: 100%;
+}
+.opc .payment-info .info tr td p{
+    font-style:normal;
+    color:#2e2e2e;
+    font-weight:500;
+    font-size:12px;
+}
+.opc .cart {
+    display: block;
+    margin:0;
+}
+.opc .cart tbody {
+    display: block;
+}
+.opc .cart thead,
+.opc .cart colgroup{
+    display:none !important;
+}
+.opc .cart tbody tr {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #d5d5d5;
+    margin-bottom: 10px;
+}
+.opc .cart tbody tr:first-child {
+    margin-top:10px;
+}
+.opc .cart tbody tr:last-child{
+    border-bottom:none;
+    margin-bottom:0;
+}
+.opc .cart .fa-edit:before {
+    content: none;
+}
+.opc .cart-button {
+    padding: 0;
+    font-size: 12px;
+    text-align: right;
+}
+.opc .cart-button a{
+    background:url('../Images/close.png') no-repeat right center;
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    color:inherit;
+}
+.opc .cart-button .edit-item a {
+    background: url('../images/edit.png') no-repeat right center;
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+}
+.opc .cart .product a{
+    font-weight:normal;
+}
+.opc .cart .product .edit-item a {
+    font-weight: bold;
+}
+.opc .cart .product .edit-item a, .opc .cart .product a {
+    color: #444;
+    text-decoration: none;
+}
+.opc .cart .product .edit-item a:hover,.opc .cart .product a:hover{
+    color: #85b175;
+}
+.opc .cart-button span {
+    margin-right: 15px !important;
+    height: 12px;
+    width: 12px;
+}
+.opc .cart td {
+    width: 65%;
+    float: right;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 5px;
+    min-width: 0;
+    background-color: #fff;
+    border-color: transparent;
+}
+.opc .cart .cart-remove-button {
+    width: 100%;
+    float: left;
+    margin:0 0 2px;
+}
+.opc .cart .product{
+    font-size:14px;
+    color:#2c2c2c;
+    font-weight:500;
+}
+.opc .cart .product-picture a {
+    display: block;
+    font-size:0;
+}
+.opc .cart td label, 
+.opc .cart td span, 
+.opc .cart td input{
+    color:#444444;
+    font-size:12px;
+    font-weight:500;
+}
+.opc .cart td label {
+    font-weight: 600;
+    display: inline-block !important;
+}
+.opc .cart td.subtotal .product-subtotal,
+.opc .cart td.subtotal .td-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2e2e2e;
+}
+.opc .checkout-attributes {
+    margin: 0;
+}
+.opc .field-validation-error {
+    text-align: left;
+}
+.opc #checkout-step-checkoutAttributes .selected-checkout-attributes {
+    float: none;
+    text-align: left;
+    margin: 0 0 5px 0;
+    font-size: 12px;
+    font-weight:600;
+    color: #2c2c2c;
+    line-height:18px;
+}
+.opc .checkout-attributes ul {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
+.opc .checkout-attributes ul li {
+    display: inline-block;
+    color: #2c2c2c;
+    font-weight:600;
+}
+.opc .checkout-attributes ul li + li {
+    margin-left: 10px;
+}
+.opc .checkout-attributes dt {
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2e2e2e;
+}
+.opc .checkout-attributes dd {
+    margin-bottom: 15px;
+}
+.opc .checkout-attributes dd select,
+.opc .checkout-attributes dd > input,
+.opc .checkout-attributes dd > textarea {
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+}
+.opc .attributes {
+    margin: 0;
+    line-height: 22px;
+    padding: 5px 0 0;
+    text-align: left;
+}
+.opc .sku {
+    padding: 5px 0 0;
+    text-align: left;
+}
+.opc .message-error {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.opc .terms-of-service {
+    border-top: 1px solid #f6f6f6;
+    padding: 15px 0 0;
+    margin: 15px 0 0;
+    line-height: 16px;
+    text-align: left;
+    position: relative;
+}
+.opc .terms-of-service input[type="checkbox"], .use-reward-points input[type="checkbox"] {
+    width: 15px;
+    vertical-align: top;
+    margin-top: 4px;
+}
+.use-reward-points label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2e2e2e;
+    display: inline-block;
+    width: calc(100% - 30px);
+    line-height: 20px;
+}
+.opc .terms-of-service label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2e2e2e;
+    display: inline-block;
+    padding-left: 5px;
+    width: calc(100% - 30px);
+    line-height: 20px;
+}
+.opc .terms-of-service a{
+    font-size:12px;
+    font-weight:500;
+    color:#4ab2f1;
+}
+.opc .totals .total-info {
+    padding: 0 !important;
+}
+.opc .cart-total tr td {
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+    line-height:19px;
+}
+.opc .cart-total .order-total td,
+.opc .cart-total .order-total strong {
+    font-weight: 700;
+    font-size: 18px;
+}
+.opc #checkout-step-checkoutAttributes-form #opc-checkoutAttributes {
+    background: #fff url(../images/gift-box.png) right bottom no-repeat !important;
+}
+.opc #checkout-step-checkoutAttributes-form #checkout-step-checkoutAttributes {
+    background-color: transparent !important;
+}
+.opc .cart tbody .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #d5d5d5;
+}
+.k-ie .opc .cart-collaterals .coupon-code input[type='text']{
+    width: calc(100% - 71px) !important;
+}
+.opc .order-cart-icon {
+    background: url('../images/cart.png') no-repeat center;
+    width: 19px;
+    height: 17px;
+    display: inline-block;
+    margin-right: 15px;
+}
+.opc .confirm-order-next-step-button span {
+    line-height: 17px;
+    vertical-align: middle;
+}

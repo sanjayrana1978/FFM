@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="English">
+  <LocaleResource Name="Emporium.CartCredit.Text">
+    <Value>Available credit</Value>
+  </LocaleResource>
+	<LocaleResource Name="ContactUs">
+		<Value>Contact Us / Help Center</Value>
+	</LocaleResource>
+	<LocaleResource Name="SevenSpikes.Themes.Emporium.Footer.Follow">
+		<Value>Follow us on</Value>
+	</LocaleResource>
+	<LocaleResource Name="content.copyrightnotice">
+		<Value>©{0} {1}. All rights reserved.</Value>
+	</LocaleResource>
+	<LocaleResource Name="NopAcceleratePlus.ShopBy.Text">
+		<Value>Shop By</Value>
+	</LocaleResource>
+	<LocaleResource Name="Favorites.Wishlist.Text">
+		<Value>Favorites</Value>
+	</LocaleResource>
+	<LocaleResource Name="plugins.nopaccelerateplus.core.field.facet.min">
+		<Value>{0}</Value>
+	</LocaleResource>
+	<LocaleResource Name="plugins.nopaccelerateplus.core.field.facet.max">
+		<Value>{0}</Value>
+	</LocaleResource>
+	<LocaleResource Name="Emporium.DesirePrice.Text">
+		<Value>Drag the slider to adjust the desire price you are looking for</Value>
+	</LocaleResource>
+	<LocaleResource Name="Emporium.HelloUser.Text">
+		<Value>Hello</Value>
+	</LocaleResource>
+	<LocaleResource Name="Emporium.GoToBack.Button">
+		<Value>Go back</Value>
+	</LocaleResource>
+	<LocaleResource Name="Emporium.GallleryAddToCart.Button">
+		<Value>Add to cart</Value>
+	</LocaleResource>
+	<LocaleResource Name="ShoppingCart">
+		<Value>Your shopping cart</Value>
+	</LocaleResource>
+	<LocaleResource Name="ShoppingCart.OrderSummaryTitle">
+		<Value>Order Summary</Value>
+	</LocaleResource>
+	<LocaleResource Name="Checkout.Button">
+		<Value>Proceed to checkout</Value>
+	</LocaleResource>
+	<LocaleResource Name="ShoppingCart.RemoveThisItem">
+		<Value>Remove this item</Value>
+	</LocaleResource>
+	<LocaleResource Name="ShoppingCart.Quantity">
+		<Value>Quantity</Value>
+	</LocaleResource>
+	<LocaleResource Name="ShoppingCart.Totals.OrderTotal">
+		<Value>Estimated total</Value>
+	</LocaleResource>
+	<LocaleResource Name="Products.SeeMore">
+		<Value>See more</Value>
+	</LocaleResource>
+	<LocaleResource Name="Product.OtherGreatOption.Title">
+		<Value>Other Great Options</Value>
+	</LocaleResource>
+	<LocaleResource Name="ShoppingCart.ItemsText">
+		<Value>Items</Value>
+	</LocaleResource>
+	<LocaleResource Name="ShoppingCart.CartIsEmpty">
+		<Value>You do not have any Items in you cart yet</Value>
+	</LocaleResource>
+	<LocaleResource Name="Products.Specs.Title">
+		<Value>This product is free from</Value>
+	</LocaleResource>
+	<LocaleResource Name="Checkout.Totals.OrderTotal.Title">
+		<Value>Total owed</Value>
+	</LocaleResource>
+	<LocaleResource Name="ShoppingCart.DiscountCouponCode">
+		<Value>Add coupon code</Value>
+	</LocaleResource>
+	<LocaleResource Name="ShoppingCart.Totals.CustomerRewardPoints">
+		<Value>Monthly credit</Value>
+	</LocaleResource>
+	<LocaleResource Name="Payment.CardholderName">
+		<Value>Card Holder Name</Value>
+	</LocaleResource>
+	<LocaleResource Name="Payment.CardNumber">
+		<Value>Credit Card Number</Value>
+	</LocaleResource>
+	<LocaleResource Name="Payment.ExpirationDate">
+		<Value>Expiration</Value>
+	</LocaleResource>
+	<LocaleResource Name="Payment.CardCode">
+		<Value>CVV code</Value>
+	</LocaleResource>
+	<LocaleResource Name="Opc.ShoppingCart.Place.Order">
+		<Value>Place Your Order</Value>
+	</LocaleResource>
+	<LocaleResource Name="Checkout.Items">
+		<Value>Items</Value>
+	</LocaleResource>
+	<LocaleResource Name="CheckoutCart.EditCart">
+		<Value>Edit Cart</Value>
+	</LocaleResource>
+	<LocaleResource Name="CheckoutCart.ContinueShopping">
+		<Value>Continue Shopping</Value>
+	</LocaleResource>
+	<LocaleResource Name="AddToWishlist.Text">
+		<Value>Add To Favorites</Value>
+	</LocaleResource>
+	<LocaleResource Name="Checkout.ShippingAddress">
+		<Value>Shipping</Value>
+	</LocaleResource>
+	<LocaleResource Name="Checkout.TermsOfService.IAccept">
+		<Value>I acknowledge that I am fully responsible for reviewing each product label upon receipt, 
+		and that Free From Market cannot guarantee the nutritional, allergen, or any other information 
+		listed on the site will match the information on the delivered items. *</Value>
+	</LocaleResource>
+	<LocaleResource Name="checkout.termsofservice.otherinfo">
+		<Value>Entiendo que soy totalmente responsable de revisar la etiqueta de cada producto al recibirlo, 
+		y que Free From Market no puede garantizar que la información nutricional, de alérgenos o cualquier 
+		otra información que aparezca en el sitio coincida con la información de los productos entregados.</Value>
+	</LocaleResource>
+	<LocaleResource Name="Opc.ShoppingCart.Order.Summary.One">
+		<Value>1</Value>
+	</LocaleResource>
+	<LocaleResource Name="Opc.ShoppingCart.Order.Summary.Two">
+		<Value>2</Value>
+	</LocaleResource>
+	<LocaleResource Name="Opc.ShoppingCart.Order.Summary.Three">
+		<Value>3</Value>
+	</LocaleResource>
+	<LocaleResource Name="Opc.ShoppingCart.Order.Summary.Four">
+		<Value>4</Value>
+	</LocaleResource>
+	<LocaleResource Name="Common.AddNew">
+		<Value>Add new shipping address</Value>
+	</LocaleResource>
+	<LocaleResource Name="Emporium.Theme.Create.Account">
+		<Value>Create an Account</Value>
+	</LocaleResource>
+	<LocaleResource Name="Emporium.Theme.Create.Account.Subtitle">
+		<Value><![CDATA[Already have an account? <a href="/login">Sign In</a>]]></Value>
+	</LocaleResource>
+	<LocaleResource Name="Account.YourPersonalDetails">
+		<Value>Personal</Value>
+	</LocaleResource>
+	<LocaleResource Name="Emporium.Theme.Register.Account.Title">
+		<Value>Account</Value>
+	</LocaleResource>
+	<LocaleResource Name="Account.Register.Button">
+		<Value>Create Account</Value>
+	</LocaleResource>
+	<LocaleResource Name="Account.Fields.FirstName">
+		<Value>First Name</Value>
+	</LocaleResource>
+	<LocaleResource Name="Account.Fields.LastName">
+		<Value>Last Name</Value>
+	</LocaleResource>
+	<LocaleResource Name="Account.Fields.ZipPostalCode">
+		<Value>Zip Code</Value>
+	</LocaleResource>
+	<LocaleResource Name="Account.Fields.Phone">
+		<Value>Phone Number</Value>
+	</LocaleResource>
+	<LocaleResource Name="Account.Fields.Email">
+		<Value>Email Address</Value>
+	</LocaleResource>
+	<LocaleResource Name="Account.Fields.Password">
+		<Value>Create Password</Value>
+	</LocaleResource>
+	<LocaleResource Name="Emporium.Theme.Register.Start.Over">
+		<Value>Start Over</Value>
+	</LocaleResource>
+</Language>

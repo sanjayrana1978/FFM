@@ -1,0 +1,224 @@
+﻿@model CatalogSettingModel
+@{
+    //page title
+    ViewBag.Title = T("XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Title.Configure").Text;
+    Layout = "_AdminLayout";
+    NopHtml.SetActiveMenuItemSystemName("XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Configure");
+}
+@inject Nop.Core.IWebHelper webHelper
+<link href="~/Plugins/NopAcceleratePlus.Search/Content/css/admin-search-configure.min.css" rel="stylesheet" />
+
+<nop-antiforgery-token />
+
+@if (!@Model.IsLicenseActive)
+{
+    <style>
+        #registerform {
+            padding: 25px;
+            background: #fff;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            overflow: auto;
+        }
+    </style>
+    <div class="col-sm-12 col-md-8 col-lg-8" style="padding-top: 110px;float: none;margin: 0 auto;">
+        <div id="registerform">
+            <div class="content-header clearfix" style="padding:0">
+                <h1 class="float-left">
+                    @T("plugins.nopaccelerateplus.catalog.fields.nopacceleratecatalog")
+                </h1>
+            </div>
+            <div>
+               @Html.Raw(@Model.RegistrationForm)
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <form asp-controller="NopAcceleratePlusAdminCatalog" asp-action="Configure" method="post">
+        <div class="content-header clearfix">@Html.Raw(@Model.LicenseInformation)</div>
+        <div class="content-header clearfix">
+            <h1 class="float-left">
+                @T("Plugins.NopAcceleratePlus.Catalog.Fields.NopAccelerateCatalog.Title")
+            </h1>
+            <h1 class="float-right">
+                <button type="submit" name="save" class="btn bg-blue">
+                    <i class="fa fa-floppy-o"></i>
+                    @T("Admin.Common.Save")
+                </button>
+            </h1>
+        </div>
+        <div class="content-header clearfix">
+            @await Component.InvokeAsync("StoreScopeConfiguration")
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="content">
+            <div class="form-horizontal">
+                <nop-tabs id="catalogconfiguration">
+                    <nop-tab asp-name="tab-category" asp-title="@T("Plugins.NopAcceleratePlus.Search.tabcategory")" asp-default="true">@await Html.PartialAsync("~/Plugins/NopAcceleratePlus.Catalog/Views/Admin/_CategoryCatalogSetting.cshtml", Model)</nop-tab>
+                    <nop-tab asp-name="tab-manufacturer" asp-title="@T("Plugins.NopAcceleratePlus.Search.tabmanufacturer")">@await Html.PartialAsync("~/Plugins/NopAcceleratePlus.Catalog/Views/Admin/_ManufacturerCatalogSetting.cshtml", Model)</nop-tab>
+                    <nop-tab asp-name="tab-producttag" asp-title="@T("Plugins.NopAcceleratePlus.Search.tabproducttag")">@await Html.PartialAsync("~/Plugins/NopAcceleratePlus.Catalog/Views/Admin/_ProductTagCatalogSetting.cshtml", Model)</nop-tab>
+                    <nop-tab asp-name="tab-vendor" asp-title="@T("Plugins.NopAcceleratePlus.Search.tabvendor")">@await Html.PartialAsync("~/Plugins/NopAcceleratePlus.Catalog/Views/Admin/_VendorCatalogSetting.cshtml", Model)</nop-tab>
+                    <nop-tab asp-name="tab-shorting" asp-title="@T("Plugins.NopAcceleratePlus.Core.tabsorting")">@await Html.PartialAsync("~/Plugins/NopAcceleratePlus.Catalog/Views/Admin/_SortingCatalogSetting.cshtml", Model)</nop-tab>
+                </nop-tabs>
+            </div>
+            @await Component.InvokeAsync("NopAcceleratePlusCatalogVersion")
+        </div>
+    </form>
+
+    <script>
+    $(document).ready(function () {
+
+        $(".adminContent").removeAttr("style");
+        $("#@Html.IdFor(model => model.EnableCategory)").click(toggleEnableCategory);
+        $("#@Html.IdFor(model => model.EnableManufacturer)").click(toggleEnableManufacturer);
+        $("#@Html.IdFor(model => model.EnableProductTag)").click(toggleEnableProductTag);
+        $("#@Html.IdFor(model => model.EnableVendor)").click(toggleEnableVendor);
+
+        restartApplication();
+        toggleEnableCategory();
+        toggleEnableManufacturer();
+        toggleEnableProductTag();
+        toggleEnableVendor();
+
+        function restartApplication() {
+            if ($('#@Html.IdFor(model => model.RestartApplicationForCatalog)').is(':checked')) {
+				$("#restart-application").click()
+            }
+        }
+
+        function toggleEnableCategory() {
+            if ($('#@Html.IdFor(model => model.EnableCategory)').is(':checked')) {
+                $('#pnlcategoryajaxfaceting').show();
+                $('#pnlcategoryinfinitescrolling').show();
+                $('#pnlcategoryshownoOfproductsfound').show();
+                $('#pnlcategorysearchWithin').show();
+            } else {
+                $('#pnlcategoryajaxfaceting').hide();
+                $('#pnlcategoryinfinitescrolling').hide();
+                $('#pnlcategoryshownoOfproductsfound').hide();
+                $('#pnlcategorysearchWithin').hide();
+            }
+        }
+        function toggleEnableManufacturer() {
+            if ($('#@Html.IdFor(model => model.EnableManufacturer)').is(':checked')) {
+                $('#pnlmanufacturerajaxfaceting').show();
+                $('#pnlmanufacturerinfinitescrolling').show();
+                $('#pnlmanufacturershownoofproductsfound').show();
+                $('#pnlmanufacturersearchWithin').show();
+
+            } else {
+                $('#pnlmanufacturerajaxfaceting').hide();
+                $('#pnlmanufacturerinfinitescrolling').hide();
+                $('#pnlmanufacturershownoofproductsfound').hide();
+                $('#pnlmanufacturersearchWithin').hide();
+            }
+        }
+        function toggleEnableProductTag() {
+            if ($('#@Html.IdFor(model => model.EnableProductTag)').is(':checked')) {
+                $('#pnlproducttagajaxfaceting').show();
+                $('#pnlproducttaginfinitescrolling').show();
+                $('#pnlproducttagshownoofproductsfound').show();
+                $('#pnlproductTagsearchWithin').show();
+            } else {
+                $('#pnlproducttagajaxfaceting').hide();
+                $('#pnlproducttaginfinitescrolling').hide();
+                $('#pnlproducttagshownoofproductsfound').hide();
+                $('#pnlproductTagsearchWithin').hide();
+            }
+        }
+        function toggleEnableVendor() {
+            if ($('#@Html.IdFor(model => model.EnableVendor)').is(':checked')) {
+                $('#pnlvendorajaxfaceting').show();
+                $('#pnlvendorinfinitescrolling').show();
+                $('#pnlvendorshownoofproductsfound').show();
+                $('#pnlvendorTagsearchWithin').show();
+            } else {
+                $('#pnlvendorajaxfaceting').hide();
+                $('#pnlvendorinfinitescrolling').hide();
+                $('#pnlvendorshownoofproductsfound').hide();
+                $('#pnlvendorTagsearchWithin').hide();
+            }
+        }
+    });
+
+    // Ajax Click
+    $("#@Html.IdFor(model => model.CategoryAjaxFaceting)").click(toggleEnableSCategoryAjaxFaceting);
+    $("#@Html.IdFor(model => model.ManufacturerAjaxFaceting)").click(toggleEnableSManufacturerAjaxFaceting);
+    $("#@Html.IdFor(model => model.VendorAjaxFaceting)").click(toggleEnableSVendorAjaxFaceting);
+    $("#@Html.IdFor(model => model.ProductTagAjaxFaceting)").click(toggleEnableSProductTagAjaxFaceting);
+
+
+    function toggleEnableSCategoryAjaxFaceting() {
+        if ($('#@Html.IdFor(model => model.CategoryAjaxFaceting)').is(':checked') === false) {
+            if ($('#@Html.IdFor(model => model.CategoryInfiniteScrolling)').is(':checked') === true) {
+                $('#@Html.IdFor(model => model.CategoryInfiniteScrolling)').click();
+            }
+            $('#@Html.IdFor(model => model.CategoryInfiniteScrolling)').prop("checked", false);
+        }
+    }
+
+    function toggleEnableSManufacturerAjaxFaceting() {
+        if ($('#@Html.IdFor(model => model.ManufacturerAjaxFaceting)').is(':checked') === false) {
+            if ($('#@Html.IdFor(model => model.ManufacturerInfiniteScrolling)').is(':checked') === true) {
+                $('#@Html.IdFor(model => model.ManufacturerInfiniteScrolling)').click();
+            }
+            $('#@Html.IdFor(model => model.ManufacturerInfiniteScrolling)').prop("checked", false);
+        }
+    }
+
+    function toggleEnableSVendorAjaxFaceting() {
+        if ($('#@Html.IdFor(model => model.VendorAjaxFaceting)').is(':checked') === false) {
+            if ($('#@Html.IdFor(model => model.VendorInfiniteScrolling)').is(':checked') === true) {
+                $('#@Html.IdFor(model => model.VendorInfiniteScrolling)').click();
+            }
+            $('#@Html.IdFor(model => model.VendorInfiniteScrolling)').prop("checked", false);
+        }
+    }
+
+    function toggleEnableSProductTagAjaxFaceting() {
+        if ($('#@Html.IdFor(model => model.ProductTagAjaxFaceting)').is(':checked') === false) {
+            if ($('#@Html.IdFor(model => model.ProductTagInfiniteScrolling)').is(':checked') === true) {
+                $('#@Html.IdFor(model => model.ProductTagInfiniteScrolling)').click();
+            }
+            $('#@Html.IdFor(model => model.ProductTagInfiniteScrolling)').prop("checked", false);
+        }
+    }
+    // End Ajax Click
+
+    $('input[type=checkbox]').each(function () {
+        var item = $(this)[0].id;
+
+        if (!item.includes('OverrideForStore')) {
+            if ($(this).prop("checked") == false) {
+                $(this).parent().next().hide();
+                $(this).parent().next().next().hide();
+            }
+            else if ($(this).prop("checked") == true) {
+                $(this).parent().next().show();
+                $(this).parent().next().next().show();
+            }
+        }
+    });
+
+    $('input[type="checkbox"]').click(function () {
+        var item = $(this)[0].id;
+        if (!item.includes('OverrideForStore')) {
+            if ($(this).prop("checked") == false) {
+                $(this).parent().next().hide();
+                $(this).parent().next().next().hide();
+            }
+            else if ($(this).prop("checked") == true) {
+                $(this).parent().next().show();
+                $(this).parent().next().next().show();
+            }
+        }
+    });
+
+    </script>
+
+
+
+    }

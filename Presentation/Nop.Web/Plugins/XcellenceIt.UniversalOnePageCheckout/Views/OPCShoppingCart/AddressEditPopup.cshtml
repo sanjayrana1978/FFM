@@ -1,0 +1,51 @@
+﻿@using Nop.Web.Models.Customer
+@model CustomerAddressEditModel
+
+<form id="form-serialize">
+    <div id="stockquantity">
+        <div class="page account-page address-edit-page">
+            <div class="page-title">
+                <h1>@T("Account.CustomerAddresses.Edit")</h1>
+            </div>
+            <div class="page-body">
+                <div asp-validation-summary="ModelOnly" class="message-error"></div>
+                @{
+                    var dataDictAddress = new ViewDataDictionary(ViewData);
+                    dataDictAddress.TemplateInfo.HtmlFieldPrefix = "Address";
+                            @await Html.PartialAsync("_CreateOrUpdateAddress", Model.Address, dataDictAddress)
+                }
+                <div class="buttons">
+                    <button type="button" class="button-1 save-address-button" id="btn">@T("Common.Save")</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script asp-loction="Footer">
+    $(document).ready(function() {
+        $("#btn").click(function() {
+            $.ajax({
+                cache: false,
+                type: "post",
+                datatype: "json",
+                url: "@(Url.Action("AddressEdit","ShippingAddress"))",
+                data: $("#form-serialize").serialize(),
+                success: function(data, textStatus, jqXHR) {
+                    if(data.Results){
+                        $("#editCustomerAddress").dialog("destroy");
+                        $('#shiping-Address-' + data.addressId).replaceWith(data.html);
+                        $('#form-serialize').html('');
+                    }
+                    else{
+                        $("#editCustomerAddress").html(data.html);
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert('Cannot perform this action.');
+                }
+            });
+        });
+    });
+</script>

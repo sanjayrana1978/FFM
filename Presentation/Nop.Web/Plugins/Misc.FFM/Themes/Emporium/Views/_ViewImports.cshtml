@@ -1,0 +1,30 @@
+﻿@inherits Nop.Web.Framework.Mvc.Razor.NopRazorPage<TModel>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Nop.Web.Framework
+
+@inject INopHtmlHelper NopHtml
+@inject IGenericAttributeService genericAttributeService
+@inject IWorkContext workContext
+
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@using Nop.Web.Framework.UI
+@using Nop.Web.Framework.Extensions
+@using System.Text.Encodings.Web
+@using XcellenceIt.Plugins.Misc.FFM.Models
+@using Nop.Web.Models.Common
+@using Nop.Web.Framework.Infrastructure
+@using Microsoft.Extensions.Primitives
+@using Nop.Services.Customers
+@using Nop.Core
+@using Nop.Core.Domain.Media
+@using Nop.Services.Common
+@using Nop.Services.Media
+@using Nop.Web.Models.Catalog
+@using Nop.Web.Extensions
+@using XcellenceIt.Plugins.Misc.FFM.Models.Company
+@using Nop.Web.Framework.Models.DataTables
+@using Nop.Web.Areas.Admin.Models.Customers
+@using Microsoft.AspNetCore.Routing
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.ViewComponents
+@using XcellenceIt.Plugins.Misc.FFM.Models.SpecificationAttributePicture

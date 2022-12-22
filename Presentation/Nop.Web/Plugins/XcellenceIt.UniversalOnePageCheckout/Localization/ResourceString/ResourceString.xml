@@ -1,0 +1,249 @@
+﻿<Language Name="EN" IsDefault="true" IsRightToLeft="false">
+  <LocaleResource Name="Checkout.CheckoutAttributes">
+    <Value>Checkout Attributes</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.OrderSummary">
+    <Value>Order Summary</Value>
+  </LocaleResource>
+  <LocaleResource Name="ShoppingCart.Item.Remove">
+    <Value>Remove</Value>
+  </LocaleResource>
+  <LocaleResource Name="ShoppingCart.Item.MoveToWishlist">
+    <Value>Move To Wishlist</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.BillingAddress.AddNew.Title">
+    <Value>Add New</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.BillingAddress.AddNew.Title">
+    <Value>Add New</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.BillingAddress.AddNew.Button">
+    <Value>ADD NEW BILLING ADDRESS</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.ShippingAddress.AddNew.Button">
+    <Value>ADD NEW SHIPPING ADDRESS</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.ShoppingCart.DiscountCouponCode.Button">
+    <Value>Apply</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.ShoppingCart.GiftCardCouponCode.Button">
+    <Value>Apply</Value>
+  </LocaleResource>
+  <!--Plugin Configuration Page-->
+  <!-- General Tab -->
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Tab.General">
+    <Value>General</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.EnableUniversalOnePageCheckout">
+    <Value>Enable Plugin</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.EnableUniversalOnePageCheckout.hint">
+    <Value>Enable Plugin.</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.DisableShoppingCart">
+    <Value>Disable Shopping Cart</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.DisableShoppingCart.hint">
+    <Value>Merge shopping cart with one page checkout</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.EnableOrderNoteMessage">
+    <Value>Show Order Note Box</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.EnableOrderNoteMessage.hint">
+    <Value>Show Order Note Box</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.Movetowishlist">
+    <Value> Move to wishlist</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.RemoveFromCart">
+    <Value> Remove</Value>
+  </LocaleResource>
+
+  <!--Checkout SubTile-->
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Checkout.Subtitle">
+    <Value>Please fill in the fields below and click Place order to complete your purchase!</Value>
+  </LocaleResource>
+  <!-- Navigation-->
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Navigation.Root.UniversalOnePageCheckout">
+    <Value>One Page Checkout</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Navigation.child.Configuration">
+    <Value>Configuration</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Navigation.Root.nopAccelerate">
+    <Value>nopAccelerate</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Navigation.child.Help">
+    <Value>Help Document</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Checkout.Confirmbutton">
+    <Value>PLACE ORDER</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.NoShippingMethods">
+    <Value>No shipping methods available</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.NoPaymentMethods">
+    <Value>No payment methods available</Value>
+  </LocaleResource>
+
+
+  <LocaleResource Name="Checkout.Accordion.ProductReview">
+    <Value>Product Review</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Accordion.BillingAddress">
+    <Value>Billing Address</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Accordion.OrderNote">
+    <Value>ORDER NOTE</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Accordion.OrderSummary">
+    <Value>ORDER SUMMARY</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Accordion.PaymentMethod">
+    <Value>PAYMENT METHOD</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Accordion.PaymentInformation">
+    <Value>PAYMENT INFORMATION</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Accordion.ShippigAddress">
+    <Value>Shipping Address</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Accordion.ShippingMethod">
+    <Value>Shipping Method</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Field.Applycoupon">
+    <Value>Apply coupon / gift card code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Accordion.DiscountGift">
+    <Value>DISCOUNT CODE / GIFT CARD</Value>
+  </LocaleResource>
+  <LocaleResource Name="Address.Placeholder.Firstname">
+    <Value>First Name *</Value>
+  </LocaleResource>
+  <LocaleResource Name="Address.Placeholder.Lastname">
+    <Value>Last Name *</Value>
+  </LocaleResource>
+  <LocaleResource Name="Address.Placeholder.Company">
+    <Value>Company</Value>
+  </LocaleResource>
+  <LocaleResource Name="Address.Placeholder.Address1">
+    <Value>Address 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Address.Placeholder.Address2">
+    <Value>Address 2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Address.Placeholder.City">
+    <Value>City</Value>
+  </LocaleResource>
+  <LocaleResource Name="Address.Placeholder.PostalCode">
+    <Value>Zip / Postal Code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Address.Placeholder.PhoneNumber">
+    <Value>Phone Number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Address.Placeholder.FaxNumber">
+    <Value>Fax Number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Address.Placeholder.Email">
+    <Value>Email *</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Field.EstimateShipping">
+    <Value>Estimate shipping</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Accordion.OtherOptions">
+    <Value>Other Options</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Order.Placed.Note.Title">
+    <Value>Order Placed Note : </Value>
+  </LocaleResource>
+
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.message.MovetoWishlist">
+    <Value>Product Successfully Moved to Wishlist.</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.message.RemoveFromCart">
+    <Value>Product Successfully Removed From Cart.</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.message.CartUpdateFailed">
+    <Value>Failed to cart Update.</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.message.CartUpdated">
+    <Value>Cart Successfully Updated.</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Title">
+    <Value>Universal OnePage Checkout</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Billingaddress.Message.Invalid">
+    <Value>Please enter valid billing address</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.Shippingaddress.Message.Invalid">
+    <Value>Please enter valid shipping address</Value>
+  </LocaleResource>
+  <LocaleResource Name="Opc.Shoppingcart.Order.Summary">
+    <Value>Order Summary</Value>
+  </LocaleResource>
+  <LocaleResource Name="opc.shoppingcart.couponcode.button">
+    <Value>Apply</Value>
+  </LocaleResource>
+  <LocaleResource Name="opc.shoppingcart.giftcards.button">
+    <Value>Apply</Value>
+  </LocaleResource>
+  <LocaleResource Name="opc.shoppingcart.place.order">
+    <Value>Place Order</Value>
+  </LocaleResource>
+  <LocaleResource Name="nop.plugin.xcellenceit.universalonepagecheckout.navigation.root.universalonepagecheckout">
+    <Value>One Page Checkout</Value>
+  </LocaleResource>
+
+  <!--Configuration Section : Start -->
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.EnableUniversalOnePageCheckout">
+    <Value>Enable Plugin</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.EnableUniversalOnePageCheckout.hint">
+    <Value>Enable Plugin. Please note that after applying this setting, you need to restart the application.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.DisableShoppingCart">
+    <Value>Disable Shopping Cart</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.DisableShoppingCart.hint">
+    <Value>Merge shopping cart with one page checkout</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.EnableEstimateShippng">
+    <Value>Show Estimate Shipping</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.EnableEstimateShippng.hint">
+    <Value>Show Estimate Shipping</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.EnableDiscountBox">
+    <Value>Show Discount Box</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.EnableDiscountBox.hint">
+    <Value>Show Discount Box</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.EnableGiftCardBox">
+    <Value>Show Gift Card Box</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.EnableGiftCardBox.hint">
+    <Value>Show Gift Card Box</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.EnableOrderNoteMessage">
+    <Value>Show Order Note Box</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.XcellenceIt.UniversalOnePageCheckout.Fields.EnableOrderNoteMessage.hint">
+    <Value>Show Order Note Box</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.DefaultPaymentMethodCountry">
+    <Value>Default Payment Method Country</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.DefaultPaymentMethodCountry.hint">
+    <Value>Set Default Payment Method Country</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.DefaultShippingMethodCountry">
+    <Value>Default Shipping Method Country</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIt.Plugin.Misc.UniversalOnePageCheckout.Fields.DefaultShippingMethodCountry.hint">
+    <Value>Set Default Shipping Method Country</Value>
+  </LocaleResource>
+  <!--Configuration Section : End -->
+
+</Language>

@@ -1,0 +1,264 @@
+﻿<!--
+// *************************************************************************
+// *                                                                       *
+// * nopAccelerate Plus - Solr Integration Extension for nopCommerce       *
+// * Copyright (c) Xcellence-IT. All Rights Reserved.                      *
+// *                                                                       *
+// *************************************************************************
+// *                                                                       *
+// * Email: info@nopaccelerate.com                                         *
+// * Website: http://www.nopaccelerate.com                                 *
+// *                                                                       *
+// *************************************************************************
+// *                                                                       *
+// * This  software is furnished  under a license  and  may  be  used  and *
+// * modified  only in  accordance with the terms of such license and with *
+// * the  inclusion of the above  copyright notice.  This software or  any *
+// * other copies thereof may not be provided or  otherwise made available *
+// * to any  other  person.   No title to and ownership of the software is *
+// * hereby transferred.                                                   *
+// *                                                                       *
+// * You may not reverse  engineer, decompile, defeat  license  encryption *
+// * mechanisms  or  disassemble this software product or software product *
+// * license.  Xcellence-IT may terminate this license if you don't comply *
+// * with  any  of  the  terms and conditions set forth in  our  end  user *
+// * license agreement (EULA).  In such event,  licensee  agrees to return *
+// * licensor  or destroy  all copies of software  upon termination of the *
+// * license.                                                              *
+// *                                                                       *
+// * Please see the  License file for the full End User License Agreement. *
+// * The  complete license agreement is also available on  our  website at * 
+// * http://www.nopaccelerate.com/enterprise-license                       *
+// *                                                                       *
+// *************************************************************************
+-->
+<Language Name="English" IsDefault="true" IsRightToLeft="false">
+
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Catalog.Fields.CatalogSetting">
+    <Value>Catalog Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Catalog.Fields.CatalogFacetSetting">
+    <Value>Facet Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Title.Configure">
+    <Value>nopAccelerate Plus Catalog Configuration</Value>
+  </LocaleResource>
+  <LocaleResource Name="XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Title.Facet">
+    <Value>nopAccelerate Plus Catalog Facet Configuration</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Catalog.Fields.NopAccelerateCatalog">
+    <Value>nopAccelerate Plus Catalog</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Catalog.Fields.NopAccelerateCatalog.Title">
+    <Value>nopAccelerate Plus Catalog Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Catalog.Menu.MainTitle">
+    <Value>nopAccelerate Plus</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Catalog.Menu.SubTitle">
+    <Value>nopAccelerate+ Catalog</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.EnableCategory">
+    <Value>Load Category From Solr Index</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.EnableCategory.Hint">
+    <Value>If checked the products will be fetched from Solr Index instead of SQL database for Category Catalog pages. Enabling this feature will help you significantly improve performance of your Category Catalog pages.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategoryAjaxFaceting">
+    <Value>Enable Ajax request</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategoryAjaxFaceting.Hint">
+    <Value>Enable this feature will use Ajax otherwise load full page on Facet selection</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategoryInfiniteScrolling">
+    <Value>Enable Infinite Scrolling</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategoryInfiniteScrolling.Hint">
+    <Value>Enable/Disable Infinite Scrolling for use infinite scrolling</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategoryInfiniteScrollingTillPage">
+    <Value>Infinite Scrolling Till Page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategoryInfiniteScrollingTillPage.Hint">
+    <Value>Add numeric value for load number of product for infinite scrolling on catagory page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategoryShowNoOfProductsFound">
+    <Value>Show Number Of Product Founds</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategoryShowNoOfProductsFound.Hint">
+    <Value>If Enable then Number of Products Found String will shown on Catalog as well as Search page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategoryEnableSearchWithin">
+    <Value>Search within Category</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategoryEnableSearchWithin.Hint">
+    <Value>If enable, then search within category functionality will be available</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategorySearchWithinSelector">
+    <Value>Selector for Search within Category</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.CategorySearchWithinSelector.Hint">
+    <Value>Selector for Search within Category</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.EnableManufacturer">
+    <Value>Load Manufacturer From Solr Index</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.EnableManufacturer.Hint">
+    <Value>If checked the products will be fetched from Solr Index instead of SQL database for Manufacturer Catalog pages. Enabling this feature will help you significantly improve performance of your Manufacturer Catalog pages.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerAjaxFaceting">
+    <Value>Enable Ajax request</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerAjaxFaceting.Hint">
+    <Value>Enable this feature will use Ajax otherwise load full page on Facet selection</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerInfiniteScrolling">
+    <Value>Enable Infinite Scrolling</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerInfiniteScrolling.Hint">
+    <Value>Enable/Disable Infinite Scrolling for use infinite scrolling</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerInfiniteScrollingTillPage">
+    <Value>Infinite Scrolling Till Page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerInfiniteScrollingTillPage.Hint">
+    <Value>Add numeric value for load number of product for infinite scrolling on manufacturer page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerShowNoOfProductsFound">
+    <Value>Show Number Of Product Founds</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerShowNoOfProductsFound.Hint">
+    <Value>If Enable then No of Products Found String will shown on Catalog as well as Search page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerEnableSearchWithin">
+    <Value>Search within Manufacturer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerEnableSearchWithin.Hint">
+    <Value>If enable, then search within Manufacturer functionality will be available</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerSearchWithinSelector">
+    <Value>Selector for Search within Manufacturer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ManufacturerSearchWithinSelector.Hint">
+    <Value>Selector for Search within Manufacturer</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.EnableVendor">
+    <Value>Load Vendor From Solr Index</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.EnableVendor.Hint">
+    <Value>If checked the products will be fetched from Solr Index instead of SQL database for Vendor Catalog pages. Enabling this feature will help you significantly improve performance of your Vendor Catalog pages.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorAjaxFaceting">
+    <Value>Enable Ajax request</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorAjaxFaceting.Hint">
+    <Value>Enable this feature will use Ajax otherwise load full page on Facet selection</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorInfiniteScrolling">
+    <Value>Enable Infinite Scrolling</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorInfiniteScrolling.Hint">
+    <Value>Enable/Disable Infinite Scrolling for use infinite scrolling</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorInfiniteScrollingTillPage">
+    <Value>Infinite Scrolling Till Page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorInfiniteScrollingTillPage.Hint">
+    <Value>Add numeric value for load number of product for infinite scrolling on vendor page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorShowNoOfProductsFound">
+    <Value>Show Number Of Product Founds</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorShowNoOfProductsFound.Hint">
+    <Value>If Enable then No of Products Found String will shown on Catalog as well as Search page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorEnableSearchWithin">
+    <Value>Search within Vendor</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorEnableSearchWithin.Hint">
+    <Value>If enable, then search within Vendor functionality will be available</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorSearchWithinSelector">
+    <Value>Selector for Search within Vendor</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.VendorSearchWithinSelector.Hint">
+    <Value>Selector for Search within Vendor</Value>
+  </LocaleResource>
+
+
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.EnableProductTag">
+    <Value>Load Product Tag From Solr Index</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.EnableProductTag.Hint">
+    <Value>If checked the products will be fetched from Solr Index instead of SQL database for ProductTag Catalog pages. Enabling this feature will help you significantly improve performance of your ProductTag Catalog pages.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagAjaxFaceting">
+    <Value>Enable Ajax request</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagAjaxFaceting.Hint">
+    <Value>Enable this feature will use Ajax otherwise load full page on Facet selection</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagInfiniteScrolling">
+    <Value>Enable Infinite Scrolling</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagInfiniteScrolling.Hint">
+    <Value>Enable/Disable Infinite Scrolling for use infinite scrolling</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagInfiniteScrollingTillPage">
+    <Value>Infinite Scrolling Till Page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagInfiniteScrollingTillPage.Hint">
+    <Value>Add numeric value for load number of product for infinite scrolling on producttag page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagShowNoOfProductsFound">
+    <Value>Show Number Of Product Founds</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagShowNoOfProductsFound.Hint">
+    <Value>If Enable then No of Products Found String will shown on Catalog as well as Search page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagEnableSearchWithin">
+    <Value>Search within ProductTag</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagEnableSearchWithin.Hint">
+    <Value>If enable, then search within productTag functionality will be available</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagSearchWithinSelector">
+    <Value>Selector for Search within ProductTag</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagSearchWithinSelector.Hint">
+    <Value>Selector for Search within ProductTag</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.Field.Catalog.ProductTagShowNoOfProductsFound">
+    <Value>Show Number Of Product Founds</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Catalog.CategoryPriceFilter.Option.PriceRangeFilter">
+    <Value>Price Range</Value>
+  </LocaleResource>
+  <!--region tabs-->
+
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.tabcategory">
+    <Value>Category</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.tabmanufacturer">
+    <Value>Manufacturer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.tabproducttag">
+    <Value>Product Tag</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.tabvendor">
+    <Value>Vendor</Value>
+  </LocaleResource>
+
+  <!--endregion-->
+
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Catalog.License.Expire.Warning">
+    <Value>There has been an issue with license for the nopAccelerate Catalog. you're using. And therefore the plugin is not in active state. Please contact nopAccelerate Support team by visiting our website or by emailing at support@nopAccelerate.com.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.NopAcceleratePlus.Search.nopAcceleratePlusCatalogVersion">
+    <Value>nopAccelerate Plus Catalog</Value>
+  </LocaleResource>
+</Language>

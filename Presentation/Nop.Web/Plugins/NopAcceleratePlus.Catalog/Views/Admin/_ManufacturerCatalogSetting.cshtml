@@ -1,0 +1,77 @@
+﻿@model XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Models.CatalogSettingModel
+@{
+    NopHtml.SetActiveMenuItemSystemName("XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Configure");
+}
+
+<div class="cards-group">
+    <div class="card card-default">
+        <div class="card-body">
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="EnableManufacturer_OverrideForStore" asp-input="EnableManufacturer" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="EnableManufacturer" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="EnableManufacturer" />
+                    <span asp-validation-for="EnableManufacturer"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlmanufacturerajaxfaceting">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ManufacturerAjaxFaceting_OverrideForStore" asp-input="ManufacturerAjaxFaceting" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ManufacturerAjaxFaceting" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ManufacturerAjaxFaceting" />
+                    <span asp-validation-for="ManufacturerAjaxFaceting"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlmanufacturerinfinitescrolling">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ManufacturerInfiniteScrolling_OverrideForStore" asp-input="ManufacturerInfiniteScrolling" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ManufacturerInfiniteScrolling" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ManufacturerInfiniteScrolling" />
+                    <span asp-validation-for="ManufacturerInfiniteScrolling"></span>
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ManufacturerInfiniteScrollingTillPage_OverrideForStore" asp-input="ManufacturerInfiniteScrollingTillPage" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ManufacturerInfiniteScrollingTillPage" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ManufacturerInfiniteScrollingTillPage" />
+                    <span asp-validation-for="ManufacturerInfiniteScrollingTillPage"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlmanufacturershownoofproductsfound">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ManufacturerShowNoOfProductsFound_OverrideForStore" asp-input="ManufacturerShowNoOfProductsFound" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ManufacturerShowNoOfProductsFound" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ManufacturerShowNoOfProductsFound" />
+                    <span asp-validation-for="ManufacturerShowNoOfProductsFound"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlmanufacturersearchWithin">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ManufacturerEnableSearchWithin_OverrideForStore" asp-input="ManufacturerEnableSearchWithin" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ManufacturerEnableSearchWithin" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ManufacturerEnableSearchWithin" />
+                    <span asp-validation-for="ManufacturerEnableSearchWithin"></span>
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="ManufacturerSearchWithinSelector_OverrideForStore" asp-input="ManufacturerSearchWithinSelector" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="ManufacturerSearchWithinSelector" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="ManufacturerSearchWithinSelector" />
+                    <span asp-validation-for="ManufacturerSearchWithinSelector"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

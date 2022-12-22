@@ -1,0 +1,288 @@
+﻿@model ConfigurationModel
+
+@{
+    Layout = "_AdminLayout";
+    NopHtml.SetActiveMenuItemSystemName("Plugins.Misc.FFM.Configure");
+    NopHtml.AppendScriptParts(ResourceLocation.Footer, "~/js/public.common.js");
+
+    const string hideInfoBlockAttributeName = "FfmSetting.HideInfoBlock";
+    var customer = await workContext.GetCurrentCustomerAsync();
+    var hideInfoBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideInfoBlockAttributeName);
+
+    const string hideOrdersBlockAttributeName = "FfmSetting.HideOrdersBlock";
+    var hideOrdersBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideOrdersBlockAttributeName, defaultValue: true);
+
+}
+<form asp-controller="FFM" asp-action="Configure" method="post">
+    <div class="content-header clearfix">
+        <h1 class="float-left">
+            @T("Plugins.Misc.FFM")
+        </h1>
+        <div class="float-right">
+            <button type="submit" name="save" class="btn btn-primary">
+                <i class="far fa-save"></i>
+                @T("Admin.Common.Save")
+            </button>
+            <button type="button" name="resetcustomerpassword" class="btn btn-primary" data-toggle="modal" data-target="#importexcel-windows">
+                @T("Plugins.Misc.FFM.Button.ResetCustomerPassword")
+            </button>
+
+            <button type="button" name="encrypt" class="btn btn-primary" data-toggle="modal" data-target="#importexcel-window">
+                @T("Plugins.Misc.FFM.Common.Encrypt")
+            </button>
+
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="form-horizontal">
+                <nop-cards id="customer-cards">
+                    <nop-card asp-name="customer-orders" asp-icon="fas fa-info" asp-title="@T("plugins.misc.ffm")" asp-hide-block-attribute-name="@hideOrdersBlockAttributeName" asp-hide="@hideOrdersBlock" asp-advanced="false">
+                        <div class="card-body">
+                            @await Component.InvokeAsync("StoreScopeConfiguration")
+                            <section class="content">
+                                <div class="container-fluid">
+                                    <div class="form-horizontal">
+                                        <div class="card card-default">
+                                            <div class="card-body">
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <nop-override-store-checkbox asp-for="Enable_OverrideForStore" asp-input="Enable"
+                                                                                     asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                                        <nop-label asp-for="Enable" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <nop-editor asp-for="Enable" />
+                                                        <span asp-validation-for="Enable"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <nop-label asp-for="Api" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <nop-editor asp-for="Api" asp-required="true" />
+                                                        <span asp-validation-for="Api"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <nop-label asp-for="RequestHeaderName" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <nop-editor asp-for="RequestHeaderName" asp-required="true" />
+                                                        <span asp-validation-for="RequestHeaderName"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <nop-label asp-for="PrimaryKey" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <nop-editor asp-for="PrimaryKey" asp-required="true" />
+                                                        <span asp-validation-for="PrimaryKey"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <nop-label asp-for="SecondaryKey" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <nop-editor asp-for="SecondaryKey" asp-required="true" />
+                                                        <span asp-validation-for="SecondaryKey"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <nop-label asp-for="PageSize" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <nop-editor asp-for="PageSize" asp-required="true" />
+                                                        <span asp-validation-for="PageSize"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <nop-label asp-for="UNFINumber" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <nop-editor asp-for="UNFINumber" asp-required="true" />
+                                                        <span asp-validation-for="UNFINumber"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <nop-label asp-for="FtpHost" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <nop-editor asp-for="FtpHost" asp-required="true" />
+                                                        <span asp-validation-for="FtpHost"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <nop-label asp-for="FtpUserName" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <nop-editor asp-for="FtpUserName" asp-required="true" />
+                                                        <span asp-validation-for="FtpUserName"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <nop-label asp-for="FtpPassword" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <nop-editor asp-for="FtpPassword" asp-required="true" />
+                                                        <span asp-validation-for="FtpPassword"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            @*for enceypt data*@
+                            <div id="importexcel-window" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="importexcel-window-title">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="importexcel-window-title">@T("Plugins.Misc.FFM.Common.Encrypt")</h4>
+                                            <button type="button" class="close" id="encryptclosepopup" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="modal-body">
+                                                <ul class="common-list">
+                                                    <li>
+                                                        <em>@T("Plugins.Misc.FFM.Admin.Configure.Encrypt.Note")</em>
+                                                    </li>
+                                                    <li>
+                                                        <em><b>@T("Plugins.Misc.FFM.Admin.Configure.Encrypt")</b></em>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" id="customcode" class="btn btn-primary">
+                                                    @T("Plugins.Misc.FFM.Admin.Popup.Button")
+                                                </button>
+                                                <span class="btn btn-default float-right margin-r-5" data-dismiss="modal">@T("Admin.Common.NoCancel")</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*for reset Customer Password*@
+                            <div id="importexcel-windows" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="importexcel-window-title">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="importexcel-window-title">@T("Plugins.Misc.FFM.Button.ResetCustomerPassword")</h4>
+                                            <button type="button" class="close" id="closepopup" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="modal-body">
+                                                <ul class="common-list">
+                                                    <li>
+                                                        <em>@T("Plugins.Misc.FFM.Admin.ResetCustomerPassword.Note")</em>
+                                                    </li>
+                                                    <li>
+                                                        <em><b>@T("Plugins.Misc.FFM.Admin.ResetCustomerPassword")</b></em>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" id="customerresetpasswordid" class="btn btn-primary">
+                                                    @T("Plugins.Misc.FFM.Admin.Popup.Button")
+                                                </button>
+                                                <span class="btn btn-default float-right margin-r-5" data-dismiss="modal">@T("Admin.Common.NoCancel")</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <nop-alert asp-alert-id="addresetcustomerpasswordAlert" asp-alert-message="@T("Plugins.Misc.FFM.FFMResetCustomerPassword.Success")" />
+
+                            <nop-alert asp-alert-id="encryptAlert" asp-alert-message="@T("Plugins.Misc.FFM.Configuration.EncryptCryptography.Success")" />
+
+                        </div>
+                    </nop-card>
+                </nop-cards>
+                <nop-cards id="customer-cards">
+                    <nop-card asp-name="customer-orders" asp-icon="fas fa-info" asp-title="@T("plugins.misc.ffm.CustomerAttributes")" asp-hide-block-attribute-name="@hideOrdersBlockAttributeName" asp-hide="@hideOrdersBlock" asp-advanced="false">
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <nop-label asp-for="@Model.RedirectToCategoryId" />
+                                </div>
+                                <div class="col-md-9">
+                                    <nop-select asp-for="@Model.RedirectToCategoryId" asp-items="@Model.AvailableCategories" />
+                                </div>
+                            </div>
+                        </div>
+                    </nop-card>
+                </nop-cards>
+            </div>
+        </div>
+    </section>
+</form>
+<script asp-location="Footer">
+    $(document).ready(function () {
+        $("#customcode").click(function () {
+            $("#ajaxBusy").show();
+
+            $.ajax({
+                url: "@Html.Raw(Url.Action("EncryptCryptography", "FFM"))",
+                success: function (data) {
+                    if (data.result) {
+                        $("#ajaxBusy").hide();
+                        $("#encryptclosepopup").click();
+                        $("#encryptAlert").click();
+                        //window.location.reload();
+
+                    } else {
+                        $("#ajaxBusy").hide();
+                        $("#encryptclosepopup").click();
+                        alert(data.message);
+                        //$("#encryptAlertError").click();
+                    }
+                },
+            });
+        });
+    });
+
+</script>
+
+
+<script asp-location="Footer">
+    $(document).ready(function () {
+        $("#customerresetpasswordid").click(function () {
+            $("#ajaxBusy").show();
+
+            $.ajax({
+                url: "@Html.Raw(Url.Action("FFMResetCustomerPassword", "FFM"))",
+                success: function (data) {
+                    if (data.result) {
+                        $("#ajaxBusy").hide();
+                        $("#closepopup").click();
+                        $("#addresetcustomerpasswordAlert").click();
+                        //window.location.reload();
+                    } else {
+                        $("#ajaxBusy").hide();
+                        $("#closepopup").click();
+                        alert(data.message);
+                        //$("#resetcustomerpasswordAlertError").click();
+                    }
+                },
+            });
+        });
+    });
+
+</script>
+@*for FTPPassword*@
+<script>
+    $("#FtpPassword").attr("type", "password");
+</script>

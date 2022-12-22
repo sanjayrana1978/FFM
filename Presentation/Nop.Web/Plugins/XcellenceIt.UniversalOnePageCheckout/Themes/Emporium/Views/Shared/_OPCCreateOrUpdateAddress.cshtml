@@ -1,0 +1,183 @@
+﻿@model AddressModel
+@using Nop.Web.Models.Common
+
+@if (Model.CountryEnabled && Model.StateProvinceEnabled)
+{
+    //we don't move this script to the footer as it's used in Ajax requests where footer is not available
+    <script asp-location="Footer">
+        $(document).ready(function () {
+            $(document).on('change', '#@Html.IdFor(model => model.CountryId)', function() {
+            var selectedItem = $(this).val();
+            var ddlStates = $("#@Html.IdFor(model => model.StateProvinceId)");
+            var statesProgress = $("#states-loading-progress");
+            statesProgress.show();
+                $.ajax({
+                cache: false,
+                    type: "GET",
+                    url: "@(Url.RouteUrl("GetStatesByCountryId"))",
+                    data: { "countryId": selectedItem, "addSelectStateItem": "true" },
+                    success: function (data) {
+                    ddlStates.html('');
+                        $.each(data, function (id, option) {
+                        ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                    });
+                    statesProgress.hide();
+                },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Failed to retrieve states.');
+                    statesProgress.hide();
+                }
+            });
+        });
+    });
+    </script>
+}
+<input asp-for="Id" type="hidden" />
+<div class="edit-address">
+    @{string requiredSymbol = "*"; }
+    <div class="inputs">
+        <input asp-for="FirstName" placeholder="@T("Address.Fields.FirstName") @requiredSymbol" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div class="inputs">
+        <input asp-for="LastName" placeholder="@T("Address.Fields.LastName") @requiredSymbol" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div class="inputs">
+        <input asp-for="Email" placeholder="@T("Address.Fields.Email") @requiredSymbol" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    @if (Model.CompanyEnabled)
+    {
+    <div class="inputs">
+        @if (Model.CompanyRequired)
+        {
+            <input asp-for="Company" placeholder="@T("Address.Fields.Company") @requiredSymbol" />
+        }
+        else
+        {
+            <input asp-for="Company" placeholder="@T("Address.Fields.Company")" />
+        }
+        <span asp-validation-for="Company"></span>
+    </div>
+    }
+    @if (Model.CountryEnabled)
+    {
+        <div class="inputs">
+            <select asp-for="CountryId" placeholder="@T("Address.Fields.Country")" asp-items="Model.AvailableCountries"></select>
+            @*<nop-required />*@
+            <span asp-validation-for="CountryId"></span>
+        </div>
+    }
+
+    @if (Model.CountryEnabled && Model.StateProvinceEnabled)
+    {
+        <div class="inputs">
+            <select asp-for="StateProvinceId" placeholder="@T("Address.Fields.StateProvince")" asp-items="Model.AvailableStates"></select>
+            <span id="states-loading-progress" style="display: none;" class="please-wait">@T("Common.Wait...")</span>
+            <span asp-validation-for="StateProvinceId"></span>
+        </div>
+    }
+    @if (Model.CountyEnabled)
+    {
+        <div class="inputs">
+            @if (Model.CountyRequired)
+            {
+                <input asp-for="County" placeholder="@T("Address.Fields.County") @requiredSymbol" />
+            }
+            else
+            {
+                <input asp-for="County" placeholder="@T("Address.Fields.County")" />
+            }
+            <span asp-validation-for="County"></span>
+        </div>
+    }
+    @if (Model.CityEnabled)
+    {
+        <div class="inputs">
+            @if (Model.CityRequired)
+            {
+                <input asp-for="City" placeholder="@T("Address.Fields.City") @requiredSymbol" />
+            }
+            else
+            {
+                <input asp-for="City" placeholder="@T("Address.Fields.City")" />
+            }
+            <span asp-validation-for="City"></span>
+        </div>
+    }
+    @if (Model.StreetAddressEnabled)
+    {
+        <div class="inputs">
+            @if (Model.StreetAddressRequired)
+            {
+                <input asp-for="Address1" placeholder="@T("Address.Fields.Address1") @requiredSymbol" />
+            }
+            else
+            {
+                <input asp-for="Address1" placeholder="@T("Address.Fields.Address1")" />
+            }
+            <span asp-validation-for="Address1"></span>
+        </div>
+    }
+    @if (Model.StreetAddress2Enabled)
+    {
+        <div class="inputs">
+            @if (Model.StreetAddress2Required)
+            {
+                <input asp-for="Address2" placeholder="@T("Address.Fields.Address2") @requiredSymbol" />
+            }
+            else
+            {
+                <input asp-for="Address2" placeholder="@T("Address.Fields.Address2")" />
+            }
+            <span asp-validation-for="Address2"></span>
+        </div>
+    }
+    @if (Model.ZipPostalCodeEnabled)
+    {
+        <div class="inputs">            
+            @if (Model.ZipPostalCodeRequired)
+            {
+            <input asp-for="ZipPostalCode" placeholder="@T("Address.Fields.ZipPostalCode") @requiredSymbol" />
+            }
+            else
+            {
+                <input asp-for="ZipPostalCode" placeholder="@T("Address.Fields.ZipPostalCode")" />
+            }
+            <span asp-validation-for="ZipPostalCode"></span>
+        </div>
+    }
+    @if (Model.PhoneEnabled)
+    {
+        <div class="inputs">
+            @if (Model.PhoneRequired)
+            {
+                <input asp-for="PhoneNumber" placeholder="@T("Address.Fields.PhoneNumber") @requiredSymbol" />
+            }
+            else
+            {
+                <input asp-for="PhoneNumber" placeholder="@T("Address.Fields.PhoneNumber")" />
+            }
+            <span asp-validation-for="PhoneNumber"></span>
+        </div>
+    }
+    @if (Model.FaxEnabled)
+    {
+        <div class="inputs">
+            @if (Model.FaxRequired)
+            {
+                <input asp-for="FaxNumber" placeholder="@T("Address.Fields.FaxNumber") @requiredSymbol" />
+            }
+            else
+            {
+                <input asp-for="FaxNumber" placeholder="@T("Address.Fields.FaxNumber")" />
+            }
+            <span asp-validation-for="FaxNumber"></span>
+        </div>
+    }
+    @if (Model.CustomAddressAttributes.Count > 0)
+    {
+        @await Html.PartialAsync("_OPCAddressAttributes", Model.CustomAddressAttributes)
+    }
+</div>

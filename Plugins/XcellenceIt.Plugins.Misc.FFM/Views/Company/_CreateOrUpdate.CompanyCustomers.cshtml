@@ -1,0 +1,85 @@
+﻿@using Nop.Web.Areas.Admin.Models.Customers
+@model CompanyModel
+
+<div class="card-body">
+    @await Html.PartialAsync("Table", new DataTablesModel
+    {
+    Name = "companycustomer-grid",
+    UrlRead = new DataUrl("CompanyCustomerList", "Company", new RouteValueDictionary { [nameof(Model.CompanyCustomerSearchModel.CompanyId)] = Model.CompanyCustomerSearchModel.CompanyId }),
+    Length = Model.CompanyCustomerSearchModel.PageSize,
+    LengthMenu = Model.CompanyCustomerSearchModel.AvailablePageSizes,
+    ColumnCollection = new List<ColumnProperty>
+    {
+        new ColumnProperty(nameof(CustomerModel.Email))
+        {
+        Title = T("Admin.Customers.Customers.Fields.Email").Text
+        },
+        new ColumnProperty(nameof(CustomerModel.FullName))
+        {
+        Title = T("Admin.Customers.Customers.Fields.FullName").Text
+        },
+
+        new ColumnProperty(nameof(CustomerModel.Id))
+        {
+        Title = T("Admin.Common.View").Text,
+        Width = "100",
+        ClassName = NopColumnClassDefaults.Button,
+        Render = new RenderButtonEdit(new DataUrl("~/Admin/Customer/Edit/",nameof(CustomerModel.Id)))
+        },
+        new ColumnProperty(nameof(CustomerModel.Id))
+        {
+        Title = T("Admin.Common.Delete").Text,
+        Width = "100",
+        Render = new RenderCustom("renderColumnDeleteNow"),
+        ClassName = NopColumnClassDefaults.Button
+        }
+    }
+    })
+</div>
+<div class="card-footer">
+    <button type="submit" id="btnAddNewProduct" onclick="javascript:OpenWindow('@(Url.Action("CustomerAddPopup", "Company", new { companyId = Model.Id, btnId = "btnRefreshProducts", formId = "company-form" }))', 800, 800, true); return false;" class="btn btn-primary">
+        @T("Plugins.Misc.FFM.Company.Customer.AddNew")
+    </button>
+    <button type="submit" id="btnRefreshProducts" style="display: none"></button>
+    <script>
+        function renderColumnDeleteNow(data, type, row, meta) {
+            return '<button class="btn btn-default" onclick=\'return deleteNow("' + row.Id + '")\'">@T("Admin.Common.Delete")</button>';
+        }
+
+        function deleteNow(id) {
+            var postData = {
+                customerId: id,
+                companyId: @Model.Id
+                            };
+            addAntiForgeryToken(postData);
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: "@(Url.Action("DeleteCustomerRole", "Company"))",
+                data: postData,
+                success: function (data, textStatus, jqXHR) {
+                    if (data.Result == false) {
+                        alert(data.Message)
+                        return;
+                    }
+                    if (data.Result == true) {
+                        updateTable('#companycustomer-grid');
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.responseText)
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            $('#btnRefreshProducts').click(function () {
+                //refresh grid
+                updateTable('#companycustomer-grid');
+
+                //return false to don't reload a page
+                return false;
+            });
+        });
+    </script>
+</div>

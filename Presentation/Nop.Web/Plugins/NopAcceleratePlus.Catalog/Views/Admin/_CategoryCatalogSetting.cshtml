@@ -1,0 +1,83 @@
+﻿@model XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Models.CatalogSettingModel
+@{
+    NopHtml.SetActiveMenuItemSystemName("XcellenceIT.Plugin.NopAcceleratePlus.Catalog.Configure");
+}
+
+<div class="cards-group">
+    <div class="card card-default">
+        <div class="card-body">
+            <!--Restart Application Setting -->
+            <div class="form-group row" style="display:none">
+                <div class="col-md-2">
+                    <nop-editor asp-for="RestartApplicationForCatalog" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="EnableCategory_OverrideForStore" asp-input="EnableCategory" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="EnableCategory" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="EnableCategory" />
+                    <span asp-validation-for="EnableCategory"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlcategoryajaxfaceting">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="CategoryAjaxFaceting_OverrideForStore" asp-input="CategoryAjaxFaceting" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="CategoryAjaxFaceting" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="CategoryAjaxFaceting" />
+                    <span asp-validation-for="CategoryAjaxFaceting"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlcategoryinfinitescrolling">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="CategoryInfiniteScrolling_OverrideForStore" asp-input="CategoryInfiniteScrolling" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="CategoryInfiniteScrolling" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="CategoryInfiniteScrolling" />
+                    <span asp-validation-for="CategoryInfiniteScrolling"></span>
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="CategoryInfiniteScrollingTillPage_OverrideForStore" asp-input="CategoryInfiniteScrollingTillPage" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="CategoryInfiniteScrollingTillPage" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="CategoryInfiniteScrollingTillPage" />
+                    <span asp-validation-for="CategoryInfiniteScrollingTillPage"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlcategoryshownoOfproductsfound">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="CategoryShowNoOfProductsFound_OverrideForStore" asp-input="CategoryShowNoOfProductsFound" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="CategoryShowNoOfProductsFound" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="CategoryShowNoOfProductsFound" />
+                    <span asp-validation-for="CategoryShowNoOfProductsFound"></span>
+                </div>
+            </div>
+            <div class="form-group row" id="pnlcategorysearchWithin">
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="CategoryEnableSearchWithin_OverrideForStore" asp-input="CategoryEnableSearchWithin" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="CategoryEnableSearchWithin" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="CategoryEnableSearchWithin" />
+                    <span asp-validation-for="CategoryEnableSearchWithin"></span>
+                </div>
+                <div class="col-md-4">
+                    <nop-override-store-checkbox asp-for="CategorySearchWithinSelector_OverrideForStore" asp-input="CategorySearchWithinSelector" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                    <nop-label asp-for="CategorySearchWithinSelector" />
+                </div>
+                <div class="col-md-2">
+                    <nop-editor asp-for="CategorySearchWithinSelector" />
+                    <span asp-validation-for="CategorySearchWithinSelector"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
